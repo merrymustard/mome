@@ -11,7 +11,7 @@ const {
     loggedin
 } = require('../controllers/auth.controllers')
 
-router.post('/login',passport.authenticate('local'), login);
+router.post('/login', passport.authenticate('local'), login);
 router.post('/signup', signup);
 router.post('/edit', edit);
 router.post('/logout', logout);

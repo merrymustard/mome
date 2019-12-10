@@ -15,11 +15,11 @@ const productSchema = new Schema({
 	image: [String],
 	category: {
 		type: String,
-		enum : [men,women]
+		enum : ["Hombre","Mujer"]
 	},
 	subcategory: {
 		type: String,
-		enum : [shirts, tshirts, sweaters, pants, shorts, dresses, skirts, shoes, accesories]
+		enum : ["Camisas", "Camisetas", "Ropa de invierno", "Pantalones", "Sorts", "Vestidos", "Faldas", "Zapatos", "Accesorios", "Ropa deportiva"]
   },
 })
 

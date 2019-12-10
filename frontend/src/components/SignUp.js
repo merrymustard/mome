@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { MyContext } from "../context";
+import styled from "styled-components";
+
 
 const SignUpTag = styled.form`
   background-image: url("/images/oval-bg.png");
@@ -64,6 +65,7 @@ const SignUpTag = styled.form`
     }
   }
 `;
+
 export default function SignupContainer(props) {
   return (
     <MyContext.Consumer>

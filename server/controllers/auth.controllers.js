@@ -4,6 +4,7 @@ const User = require('../models/User');
 // POST  	/auth/signup	username, password, campus, course	User created
 exports.signup = async (req, res) => {
     console.log("Is inside")
+    console.log(req.body)
     await User.register( req.body, req.body.password)
         .then((user) => { res.status(201).json({user}); })
         .catch((err) => res.status(500).json({ err }));

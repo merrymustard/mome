@@ -8,9 +8,9 @@ process.env.NODE_ENV === "production"
 const service = axios.create({ withCredentials: true, baseURL });
 
 const MY_SERVICE = {
-  test: async () => {
-    return await service.get("/");
-  },
+  // test: async () => {
+  //   return await service.get("/");
+  // },
   signup: async user => {
     return await service.post("/signup", user);
   },
