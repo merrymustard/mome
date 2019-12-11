@@ -1,6 +1,12 @@
 import React from "react";
 import { MyContext } from "../context";
-import { SignUpTag, MainWrapperield, MainBtn } from "../styledComponents/StyledComps";
+import {
+  SignUpTag,
+  MainWrapperield,
+  MainBtn,
+  RowContainerRadio,
+  CenterizeMe
+} from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
   return (
@@ -14,8 +20,11 @@ export default function SignupContainer(props) {
           }}
         >
           <MainWrapperield>
-            <h1>Información Personal</h1>
-
+            <h1 className="tenpix">Registro</h1>
+            <h4 className="tenpix">Datos Personales</h4>
+            <hr />
+            {/* <small>*Campo obligatorio</small>*/}
+            <br/> 
             {/* row1 */}
             <div className="row-container">
               <div className="form-container">
@@ -40,7 +49,7 @@ export default function SignupContainer(props) {
             {/* row2 */}
             <div className="row-container">
               <div className="form-container">
-                <label for="Username">Usuario</label>
+                <label for="Username">Usuario*</label>
                 <input
                   type="text"
                   name="username"
@@ -74,7 +83,7 @@ export default function SignupContainer(props) {
               <div className="form-container">
                 {/* genero radio */}
                 <label for="category">Selecciona tu genero*</label>
-                <div
+                <RowContainerRadio
                   className="row-container-radio"
                   onChange={e => context.handleInput(e, "newProduct")}
                 >
@@ -97,7 +106,7 @@ export default function SignupContainer(props) {
                     />
                     <label for="test2">Mujer</label>
                   </p>
-                </div>
+                </RowContainerRadio>
                 {/* genero radio end */}
               </div>
             </div>
@@ -114,15 +123,9 @@ export default function SignupContainer(props) {
                 />
               </div>
             </div>
-
-
-          
-              <MainBtn type="button" value="Guardar cambios">
-            </MainBtn>
-            <button type="submit"></button>
-
-
-
+            <CenterizeMe>
+              <MainBtn type="submit" value="Crear Cuenta"></MainBtn>
+            </CenterizeMe>
           </MainWrapperield>
 
           <div>
@@ -142,7 +145,6 @@ export default function SignupContainer(props) {
               telephone or post.
             </p>
           </div>
-
         </SignUpTag>
       )}
     </MyContext.Consumer>

@@ -6,9 +6,11 @@ import LogIn from "./components/LogIn";
 import Profile from "./components/Profile";
 import AddProducts from "./components/AddProducts"
 import NotFound from "./components/404/NotFound.js";
+import NavBar from "./components/NavBar"
 
 const Router = () => (
   <BrowserRouter>
+  <NavBar></NavBar>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={LogIn} />

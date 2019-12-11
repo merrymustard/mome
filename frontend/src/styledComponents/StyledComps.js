@@ -1,12 +1,24 @@
 import styled from "styled-components";
 
-//sign up form
+/////color palette
+export const colors = {
+  primary: " #0f0d35",
+  // primary: " #201e45",
+  secondary: "#404267",
+  secondaryLight: "#e4e4ef",
+  accent: "#f07b7b",
+  darkBlack: "#131415",
+  midGray: "#888888",
+  lighGray: "#F5F5F5"
+};
+
+////////// sign up form
 export const SignUpTag = styled.form`
-  ${"" /* background-image: url("/images/oval-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover; */}
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 6% 10%;
   text-align: left;
   box-sizing: border-box;
@@ -18,7 +30,14 @@ export const SignUpTag = styled.form`
   }
   h1 {
     font-size: 3rem;
-    color: #628165;
+    font-weight: 200;
+    color: ${colors.darkBlack};
+  }
+  h4 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: ${colors.midGray};
   }
 `;
 
@@ -70,75 +89,98 @@ export const AddProdTag = styled.form`
   }
 `;
 
+////////// Buttons
 export const MainBtn = styled.input`
-  padding: 10px;
-	background-color: red;
-
+  padding: 18px 30px;
+  background-color: ${colors.accent};
+  border: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
 `;
 
-// forms main skeleton
+///////////Radiobuttons
+export const RowContainerRadio = styled.div`
+  display: flex;
+  flex-direction: row;
+  [type="radio"]:checked,
+  [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+  }
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: ${colors.accent};
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  [type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  [type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+`;
+
+export const CenterizeMe = styled.div`
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+`;
+
+////////// forms main skeleton
 export const MainWrapperield = styled.div`
     width: 50%;
     @media (max-width: 768px) {
       width: 100%;
     }
-
-    .row-container-radio {
-      display: flex;
-      flex-direction: row;
-
-      ${"" /* radio button styles */}
-      [type="radio"]:checked,
-[type="radio"]:not(:checked) {
-        position: absolute;
-        left: -9999px;
-      }
-      [type="radio"]:checked + label,
-      [type="radio"]:not(:checked) + label {
-        position: relative;
-        padding-left: 28px;
-        cursor: pointer;
-        line-height: 20px;
-        display: inline-block;
-        color: #666;
-      }
-      [type="radio"]:checked + label:before,
-      [type="radio"]:not(:checked) + label:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #ddd;
-        border-radius: 100%;
-        background: #fff;
-      }
-      [type="radio"]:checked + label:after,
-      [type="radio"]:not(:checked) + label:after {
-        content: "";
-        width: 12px;
-        height: 12px;
-        background: #f87da9;
-        position: absolute;
-        top: 4px;
-        left: 4px;
-        border-radius: 100%;
-        -webkit-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-      }
-      [type="radio"]:not(:checked) + label:after {
-        opacity: 0;
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-      [type="radio"]:checked + label:after {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-      }
-      ${"" /* end radio buttons style */}
-    }
+		hr{
+		border: ${colors.secondaryLight} solid 0.5px;
+		}
+	small{
+		float: right;
+		font-size: .8rem;
+		color: ${colors.midGray};
+		margin-bottom: 20px;
+	}
+		.tenpix{
+			margin-left: 10px;
+		}
 
     .row-container {
       display: flex;
@@ -153,6 +195,9 @@ export const MainWrapperield = styled.div`
         flex-direction: column;
         margin: 10px 0;
         width: 100%;
+				 label{
+					 color: ${colors.midGray}
+				 }
         .radio-btn-h {
           display: flex;
           flex-direction: row;
@@ -162,16 +207,16 @@ export const MainWrapperield = styled.div`
             font-size: 3rem;
           }
         }
-
         label {
           margin-left: 10px;
         }
       }
       input {
         padding: 16px;
-        border: black solid 1px;
+        border: ${colors.secondaryLight} solid 1px;
         margin: 10px;
         font-size: 1rem;
+				border-radius: 4px;
       }
     }
   }
@@ -250,4 +295,31 @@ export const ProfileTag = styled.form`
       width: 110%;
     }
   }
+`;
+
+////////// main nav
+export const NavMain = styled.nav`
+.logo{
+	color: white;
+}
+	width: 100vw;
+	height: 60px;
+	background-color: ${colors.darkBlack};
+	top: 0;
+	position: fixed;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 4%;
+	.main-nav-icons{
+		width: 10%;
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+				width:24%;
+			}
+    }
+	}
 `;
