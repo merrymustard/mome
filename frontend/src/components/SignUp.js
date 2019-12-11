@@ -1,6 +1,6 @@
 import React from "react";
 import { MyContext } from "../context";
-import { SignUpTag } from "../styledComponents/StyledComps";
+import { SignUpTag, MainWrapperield, MainBtn } from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
   return (
@@ -13,13 +13,13 @@ export default function SignupContainer(props) {
             props.history.push("/profile");
           }}
         >
-          <div div className="duo-div">
+          <MainWrapperield>
             <h1>Información Personal</h1>
 
             {/* row1 */}
             <div className="row-container">
               <div className="form-container">
-                <label for="name">Nombre</label>
+                <label for="name">Nombre*</label>
                 <input
                   type="text"
                   name="name"
@@ -28,7 +28,7 @@ export default function SignupContainer(props) {
                 />
               </div>
               <div className="form-container">
-                <label for="lastname">Apellido</label>
+                <label for="lastname">Apellido*</label>
                 <input
                   type="text"
                   name="lastname"
@@ -38,39 +38,22 @@ export default function SignupContainer(props) {
               </div>
             </div>
             {/* row2 */}
-          
             <div className="row-container">
               <div className="form-container">
-              <label for="category">Genero</label>
-              
-                <div
-                  className="radio-btn-h"
-                  onChange={e => context.handleInput(e, "newProduct")}
-                >
-                
-                  <input
-                    type="radio"
-                    name="category"
-                    value="Hombre"
-                    onChange={e => context.handleInput(e, "newProduct")}
-                  />
-                  Hombre
-                  <br />
-                  <input
-                    type="radio"
-                    name="category"
-                    value="Mujer"
-                    // onChange={e => context.handleInput(e, "newProduct")}
-                  />
-                  Mujer
-                </div>
+                <label for="Username">Usuario</label>
+                <input
+                  type="text"
+                  name="username"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.username}
+                />
               </div>
 
               <div className="form-container">
-                <tag>Pais</tag>
+                <label for="country">Pais*</label>
                 <input
                   type="text"
-                  name="lastname"
+                  name="country"
                   onChange={e => context.handleInput(e, "formSignup")}
                   // drop down con un json de paises... move it lady.
                   value="Pais"
@@ -80,7 +63,7 @@ export default function SignupContainer(props) {
             {/* row3 */}
             <div className="row-container">
               <div className="form-container">
-                <tag>Email</tag>
+                <label for="email">Email*</label>
                 <input
                   type="email"
                   name="email"
@@ -89,26 +72,58 @@ export default function SignupContainer(props) {
                 />
               </div>
               <div className="form-container">
-                <tag>Username</tag>
+                {/* genero radio */}
+                <label for="category">Selecciona tu genero*</label>
+                <div
+                  className="row-container-radio"
+                  onChange={e => context.handleInput(e, "newProduct")}
+                >
+                  <p>
+                    <input
+                      type="radio"
+                      id="test1"
+                      name="category"
+                      value="Hombre"
+                      checked
+                    />
+                    <label for="test1">Hombre</label>
+                  </p>
+                  <p>
+                    <input
+                      type="radio"
+                      id="test2"
+                      name="category"
+                      value="Mujer"
+                    />
+                    <label for="test2">Mujer</label>
+                  </p>
+                </div>
+                {/* genero radio end */}
+              </div>
+            </div>
+
+            {/* row 4 */}
+            <div className="row-container">
+              <div className="form-container ">
+                <label for="password">Password*</label>
                 <input
-                  type="text"
-                  name="username"
+                  type="password"
+                  name="password"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.username}
+                  value={context.formSignup.password}
                 />
               </div>
             </div>
 
-            <div className="form-container">
-              <tag>Password</tag>
-              <input
-                type="password"
-                name="password"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.password}
-              />
-            </div>
-          </div>
+
+          
+              <MainBtn type="button" value="Guardar cambios">
+            </MainBtn>
+            <button type="submit"></button>
+
+
+
+          </MainWrapperield>
 
           <div>
             <p>
@@ -128,7 +143,6 @@ export default function SignupContainer(props) {
             </p>
           </div>
 
-          <button type="submit">Create the Account</button>
         </SignUpTag>
       )}
     </MyContext.Consumer>
