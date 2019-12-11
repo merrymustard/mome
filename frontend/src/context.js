@@ -12,9 +12,9 @@ class MyProvider extends Component {
     loggedUser: false,
     formSignup: {
       username: "",
-      campus: "",
+      name: "",
       password: "",
-      course: ""
+      email: ""
     },
     loginForm: {
       username: "",
@@ -135,7 +135,8 @@ class MyProvider extends Component {
   render() {
     console.log(this.state)
     return ( <MyContext.Provider value = {
-        {
+        {          
+          state: this.state,
           loggedUser: this.state.loggedUser,
           formSignup: this.state.formSignup,
           loginForm: this.state.loginForm,
@@ -146,8 +147,8 @@ class MyProvider extends Component {
           addStockForm: this.addStockForm,
           newProduct: this.state.newProduct,
           addProduct: this.addProduct,
+          stockInputs: this.state.stockInputs,
           // user: this.state.user,
-          state: this.state
         }
       } >
       {

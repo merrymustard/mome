@@ -80,6 +80,24 @@ export default function SignupContainer(props) {
           <div div className="duo-div">
             <h1>Sign Up</h1>
             <div className="form-container">
+              <tag>Name</tag>
+              <input
+                type="text"
+                name="name"
+                onChange={e => context.handleInput(e, "formSignup")}
+                value={context.formSignup.name}
+              />
+            </div>
+            <div className="form-container">
+              <tag>Email</tag>
+              <input
+                type="email"
+                name="email"
+                onChange={e => context.handleInput(e, "formSignup")}
+                value={context.formSignup.email}
+              />
+            </div>
+            <div className="form-container">
               <tag>Username</tag>
               <input
                 type="text"
@@ -97,24 +115,7 @@ export default function SignupContainer(props) {
                 value={context.formSignup.password}
               />
             </div>
-            <div className="form-container">
-              <tag>Campus</tag>
-              <input
-                type="text"
-                name="campus"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.campus}
-              />
-            </div>
-            <div className="form-container">
-              <tag>Course</tag>
-              <input
-                type="text"
-                name="course"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.course}
-              />
-            </div>
+       
           </div>
           <div div className="duo-div">
             <div>

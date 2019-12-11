@@ -32,7 +32,7 @@ export default class AddProducts extends Component {
 					<br/>
 						<div className="subcategories-container">
 							<label for="subcategory">Tipo de producto</label>
-							<div>
+							<div className="subcategorie-container"  >
 								<input type="radio" name="subcategory"  value="Camisas"  onChange={e=> context.handleInput(e,"newProduct")}/>Camisas
 								<input type="radio" name="subcategory"  value="Camisetas"  onChange={e=> context.handleInput(e,"newProduct")}/>Camisetas
 								<input type="radio" name="subcategory"  value="Accesorios"  onChange={e=> context.handleInput(e,"newProduct")}/>Accesorios	
@@ -41,11 +41,10 @@ export default class AddProducts extends Component {
 								<input type="radio" name="subcategory"  value="Sorts"  onChange={e=> context.handleInput(e,"newProduct")}/>Sorts	
 								<input type="radio" name="subcategory"  value="Vestidos"  onChange={e=> context.handleInput(e,"newProduct")}/>Vestidos	
 								<input type="radio" name="subcategory"  value="Zapatos"  onChange={e=> context.handleInput(e,"newProduct")}/>Zapatos
-								<input type="radio" name="subcategory"  value="Ropa de invierno"  onChange={e=> context.handleInput(e,"newProduct")}/>Ropa de invierno
-								<input type="radio" name="subcategory"  value="Ropa deportiva"  onChange={e=> context.handleInput(e,"newProduct")}/>Ropa deportiva			
+								<input type="radio" name="subcategory"  value="Ropa de invierno" onChange={e=> context.handleInput(e,"newProduct")}/>Ropa de invierno
+								<input type="radio" name="subcategory"  value="Ropa deportiva" onChange={e=> context.handleInput(e,"newProduct")}/>Ropa deportiva			
 							</div>
 						</div>
-					
 						<div>
 							{context.state.stockInputs.map(()=>(<StockInput/>))}
 							<button  onClick={context.addStockForm}>Agrega mas inventario</button>
@@ -65,15 +64,27 @@ function StockInput(props){
 			<InventoryInput>
 				<div className="inventory-blocks">
 					<label for="quantity">Cantidad</label>
-					<input name="quantity" type="number" placeholder="0" onChange={context.handleStockInput}/>
+					<input name="quantity" type="number" placeholder="0" value={context.addStockForm.quantity}  
+					 onChange={e=> context.handleInput(e,"newProduct")}
+					//  onChange={e=> context.handleInput(e,"handleStockInput")}
+					// onChange={context.handleStockInput}
+					/>
 				</div>
 				<div  className="inventory-blocks">
 					<label for="color">color</label>
-					<input name="color" type="text" placeholder="color"  onChange={context.handleStockInput}/>
+					<input name="color" type="text" placeholder="Color" value={context.addStockForm.color}  
+					onChange={e=> context.handleInput(e,"newProduct")}
+					// onChange={context.handleStockInput}
+					/>
 				</div>
 				<div  className="inventory-blocks">
 					<label for="talla">Talla</label>
-					<input name="size" type="text" placeholder="sizes"  onChange={context.handleStockInput}/>
+					<input name="size" type="text" placeholder="Talla del producto" value={context.addStockForm.size}  
+					// onChange={context.handleStockInput}
+					onChange={e=> context.handleInput(e,"newProduct")}
+
+
+					/>
 				</div>
 			</InventoryInput>
 		)}

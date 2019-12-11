@@ -35,8 +35,8 @@ exports.loggedin = (req, res, next) => {
 // Method	Endpoint	    Parameters      	        Return Value
 // POST	    /auth/edit	    username, campus, course	User updated
 exports.edit = async (req, res) => {
-    const {username, campus, course} = req.body
-    await User.findByIdAndUpdate(req.user._id, { username, campus, course })
+    const {username, email, name} = req.body
+    await User.findByIdAndUpdate(req.user._id, { username, email, name })
         .then(user => res.status(200).json({ user }))
         .catch(err => console.log(err));
 }
