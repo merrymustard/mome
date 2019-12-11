@@ -1,7 +1,129 @@
 import styled from "styled-components";
 
+//sign up form
+export const SignUpTag = styled.form`
+  ${"" /* background-image: url("/images/oval-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover; */}
+  width: 100vw;
+  height: 100vh;
+  padding: 6% 10%;
+  text-align: left;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  p {
+    font-size: 1.2rem;
+    color: #97989a;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #628165;
+  }
+  .duo-div {
+    width: 50%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    .row-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
 
-export const SignUpTag = styled.form `
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        width: 100%;
+				.radio-btn-h{
+					display: flex;
+        	flex-direction: row;
+					align-items:center;
+					input{
+						width: 80px;
+						font-size: 3rem;
+					}
+				}
+
+        label {
+          margin-left: 10px;
+        }
+      }
+      input {
+        padding: 16px;
+        border: black solid 1px;
+        margin: 10px;
+        font-size: 1rem;
+      }
+    }
+  }
+`;
+
+// add product form
+export const AddProdTag = styled.form`
+  width: 100vw;
+  height: 100vh;
+  padding: 6% 10%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: left;
+  label {
+    margin: 10px 0;
+  }
+  input {
+    padding: 14px;
+    border: none;
+    background: #ececec;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  textarea {
+    padding: 14px;
+    height: 300px;
+    border: none;
+    background: #ececec;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  button[type="submit"] {
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: salmon;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  div > button {
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 14px;
+    border: none;
+    margin: 10px 0;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+  }
+`;
+
+export const InventoryInput = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 14px 0;
+  .inventory-blocks {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const ProfileTag = styled.form`
   background-image: url("/images/oval-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,15 +136,14 @@ export const SignUpTag = styled.form `
   flex-direction: row;
   p {
     font-size: 1.2rem;
-    color:#97989a;
+    color: #97989a;
   }
   h1 {
-      font-size: 3rem;
-      color:#628165;
-    }
+    font-size: 3rem;
+    color: #628165;
+  }
   .duo-div {
     width: 36%;
-
   }
   .duo-div:last-of-type {
     padding-left: 30%;
@@ -63,65 +184,3 @@ export const SignUpTag = styled.form `
     }
   }
 `;
-
-
-// add product form
-export const AddProdTag = styled.form `
-  width: 100vw;
-  height: 100vh;
-  padding: 6% 10%;
-  display: flex;
-  flex-direction: column;
-	box-sizing: border-box;
-	text-align: left;
-	label{
-		margin: 10px 0;
-	}
-	input{
-		padding: 14px;
-    border: none;
-    background: #ececec;
-    margin-bottom: 5px;
-		border-radius: 10px;
-	}
-	textarea{
-		padding: 14px;
-		height: 300px;
-    border: none;
-    background: #ececec;
-    margin-bottom: 5px;
-		border-radius: 10px;
-	}
-	button[type="submit"]{
-		font-size: 1.2rem;
-		padding: 10px;
-		background-color: salmon;
-		color: white;
-		border: none;
-		border-radius: 10px;
-		margin: 20px 0;
-	}
-	div>button{
-			font-size: 1rem;
-			font-weight: 800;
-			padding: 14px;
-			border: none;
-			margin: 10px 0;
-			background-color: black;
-			color: white;
-			border-radius: 10px;
-	}
-`;
-
-export const InventoryInput = styled.div `
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-		box-sizing: border-box;
-		padding: 14px 0;
-		.inventory-blocks{
-			display: flex;
-			flex-direction: column;
-		}
-`

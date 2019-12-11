@@ -1,70 +1,6 @@
 import React from "react";
 import { MyContext } from "../context";
-import styled from "styled-components";
-
-
-const SignUpTag = styled.form`
-  background-image: url("/images/oval-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  padding: 6% 10%;
-  text-align: left;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  p {
-    font-size: 1.2rem;
-    color:#97989a;
-  }
-  h1 {
-      font-size: 3rem;
-      color:#628165;
-    }
-  .duo-div {
-    width: 36%;
-
-  }
-  .duo-div:last-of-type {
-    padding-left: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    button {
-      width: 100%;
-      height: 60px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-    }
-    h3 {
-      font-size: 2rem;
-      font-weight: 300;
-      margin: 5px 0;
-    }
-    h2 {
-      font-size: 2.4rem;
-      margin: 0;
-    }
-  }
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    margin: 40px 0;
-    tag {
-      color: #949494;
-    }
-    input {
-      padding: 14px;
-      border: none;
-      background: #ececec;
-      margin: 5px 0;
-      width: 110%;
-    }
-  }
-`;
+import { SignUpTag } from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
   return (
@@ -72,40 +8,97 @@ export default function SignupContainer(props) {
       {context => (
         <SignUpTag
           onSubmit={e => {
-            e.preventDefault()
+            e.preventDefault();
             context.handleSignup(e);
             props.history.push("/profile");
           }}
         >
           <div div className="duo-div">
-            <h1>Sign Up</h1>
-            <div className="form-container">
-              <tag>Name</tag>
-              <input
-                type="text"
-                name="name"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.name}
-              />
+            <h1>Información Personal</h1>
+
+            {/* row1 */}
+            <div className="row-container">
+              <div className="form-container">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.name}
+                />
+              </div>
+              <div className="form-container">
+                <label for="lastname">Apellido</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value="Apellido"
+                />
+              </div>
             </div>
-            <div className="form-container">
-              <tag>Email</tag>
-              <input
-                type="email"
-                name="email"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.email}
-              />
+            {/* row2 */}
+          
+            <div className="row-container">
+              <div className="form-container">
+              <label for="category">Genero</label>
+              
+                <div
+                  className="radio-btn-h"
+                  onChange={e => context.handleInput(e, "newProduct")}
+                >
+                
+                  <input
+                    type="radio"
+                    name="category"
+                    value="Hombre"
+                    onChange={e => context.handleInput(e, "newProduct")}
+                  />
+                  Hombre
+                  <br />
+                  <input
+                    type="radio"
+                    name="category"
+                    value="Mujer"
+                    // onChange={e => context.handleInput(e, "newProduct")}
+                  />
+                  Mujer
+                </div>
+              </div>
+
+              <div className="form-container">
+                <tag>Pais</tag>
+                <input
+                  type="text"
+                  name="lastname"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  // drop down con un json de paises... move it lady.
+                  value="Pais"
+                />
+              </div>
             </div>
-            <div className="form-container">
-              <tag>Username</tag>
-              <input
-                type="text"
-                name="username"
-                onChange={e => context.handleInput(e, "formSignup")}
-                value={context.formSignup.username}
-              />
+            {/* row3 */}
+            <div className="row-container">
+              <div className="form-container">
+                <tag>Email</tag>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.email}
+                />
+              </div>
+              <div className="form-container">
+                <tag>Username</tag>
+                <input
+                  type="text"
+                  name="username"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.username}
+                />
+              </div>
             </div>
+
             <div className="form-container">
               <tag>Password</tag>
               <input
@@ -115,22 +108,27 @@ export default function SignupContainer(props) {
                 value={context.formSignup.password}
               />
             </div>
-       
           </div>
-          <div div className="duo-div">
-            <div>
-              <h2>Hello!</h2>
-              <h3>Wellcome to IronProfile!</h3>
-            </div>
-            <div>
-              <p>
-                If you sign up you agree with all our terms and conditions where
-                we can do whatever we want with the data!
-              </p>
-            </div>
 
-            <button type="submit">Create the Account</button>
+          <div>
+            <p>
+              Having acknowledged the information received through this Privacy
+              Notice, pursuant to Article 13 of EU Regulation 679/2016, which I
+              have read and understood, and aware that I am completely free to
+              choose: I give consent for the handling of my personal information
+              by MoMe for the distribution of commercial and informative
+              material related to TOD’S or third-party products and services, to
+              perform market research by MoMe for the participation of and/or
+              events, by E-mail, SMS and by telephone or post. I give consent
+              for TOD’S to use my personal information for commercial purposes,
+              by analysing the type and frequency of purchases that I make on
+              the web store, in order to create specially directed commercial
+              material for me, from MoMe or third-parties, by email, SMS and by
+              telephone or post.
+            </p>
           </div>
+
+          <button type="submit">Create the Account</button>
         </SignUpTag>
       )}
     </MyContext.Consumer>
