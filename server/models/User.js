@@ -10,6 +10,11 @@ const userSchema = new Schema({
     lastname: String,
     email: String,
     image: String,
+    country : String,
+    gender: {
+        type: String,
+        enum:["men", "women"]
+    },
     orders: [{}],
     wishList: [{
         type: Schema.Types.ObjectId,

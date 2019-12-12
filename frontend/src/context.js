@@ -13,6 +13,9 @@ class MyProvider extends Component {
     formSignup: {
       username: "",
       name: "",
+      lastname: "",
+      country: "",
+      gender: "",
       password: "",
       email: ""
     },

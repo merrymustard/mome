@@ -2,6 +2,7 @@ import React from "react";
 import { MyContext } from "../context";
 import { NavMain } from "../styledComponents/StyledComps";
 import Icon from "@mdi/react";
+import NavProfileSide from "../components/NavProfileSide"
 
 import {
   mdiAccountCircleOutline,
@@ -28,6 +29,7 @@ export default function NavBar() {
               size={1}
               color="white"
             />
+
             <Icon
               path={mdiCartOutline}
               title="User Profile"

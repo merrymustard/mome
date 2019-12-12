@@ -42,7 +42,7 @@ export default function SignupContainer(props) {
                   type="text"
                   name="lastname"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value="Apellido"
+                  value={context.formSignup.lastname}
                 />
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function SignupContainer(props) {
                   name="country"
                   onChange={e => context.handleInput(e, "formSignup")}
                   // drop down con un json de paises... move it lady.
-                  value="Pais"
+                  value={context.formSignup.country}
                 />
               </div>
             </div>
