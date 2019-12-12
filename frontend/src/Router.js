@@ -7,6 +7,7 @@ import Profile from "./components/Profile";
 import AddProducts from "./components/AddProducts"
 import NotFound from "./components/404/NotFound.js";
 import NavBar from "./components/NavBar"
+import IndividualProduct from "./components/IndividualProduct";
 
 const Router = () => (
   <BrowserRouter>
@@ -17,9 +18,13 @@ const Router = () => (
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/addproduct" component={AddProducts} />
+      {/* //Add actual product id route */}
+      <Route exact path="/individualproduct" component={IndividualProduct} />
+
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
 );
+
 
 export default Router;

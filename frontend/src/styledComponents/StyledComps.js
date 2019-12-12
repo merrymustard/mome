@@ -12,6 +12,23 @@ export const colors = {
   lighGray: "#F5F5F5"
 };
 
+////////// Typography
+
+export const SubHeaderHighC = styled.h4`
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: ${colors.midGray};
+`;
+
+export const H1a = styled.h1`
+  font-size: 3rem;
+  font-weight: 200;
+  padding: 0;
+  margin: 0;
+  color: ${colors.darkBlack};
+`;
+
 ////////// sign up form
 export const SignUpTag = styled.form`
   width: 100vw;
@@ -27,17 +44,6 @@ export const SignUpTag = styled.form`
   p {
     font-size: 1.2rem;
     color: #97989a;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 200;
-    color: ${colors.darkBlack};
-  }
-  h4 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: ${colors.midGray};
   }
 `;
 
@@ -92,14 +98,53 @@ export const AddProdTag = styled.form`
 ////////// Buttons
 export const MainBtn = styled.input`
   padding: 18px 30px;
-  background-color: ${colors.accent};
   border: none;
   font-size: 1rem;
   text-transform: uppercase;
+  background-color: white;
+  background-color: ${colors.accent};
   letter-spacing: 1px;
   font-weight: 600;
   color: white;
   border-radius: 4px;
+`;
+
+export const TemplateBtn = styled.button`
+	height: 60px;
+	display: inline;
+  padding: 20px 30px;
+  border: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background-color: white;
+	background-color: ${colors.darkBlack};
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: white;
+  border-radius: 4px;
+	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.4);
+
+  #accenBtn {
+    background-color: ${colors.accent};
+  }
+  #whitebtn {
+    background-color: white!important;
+  }
+`;
+
+export const TemplateBtnWhite = styled.button`
+	height: 40px;
+  padding: 10px 20px;
+  border: none;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background-color: white;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: black;
+  border-radius: 4px;
+	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
+
 `;
 
 ///////////Radiobuttons
@@ -157,6 +202,7 @@ export const RowContainerRadio = styled.div`
   }
 `;
 
+////////// Aligment
 export const CenterizeMe = styled.div`
   display: flex;
   flex-direction: center;
@@ -182,14 +228,6 @@ export const MainWrapperield = styled.div`
 			margin-left: 10px;
 		}
 
-    .row-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media (max-width: 768px) {
-        flex-direction: column;
-      }
-
       .form-container {
         display: flex;
         flex-direction: column;
@@ -198,15 +236,6 @@ export const MainWrapperield = styled.div`
 				 label{
 					 color: ${colors.midGray}
 				 }
-        .radio-btn-h {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          input {
-            width: 80px;
-            font-size: 3rem;
-          }
-        }
         label {
           margin-left: 10px;
         }
@@ -234,6 +263,18 @@ export const InventoryInput = styled.div`
     flex-direction: column;
   }
 `;
+
+////////// containers
+export const RowContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+//////////
 
 export const ProfileTag = styled.form`
   background-image: url("/images/oval-bg.png");
@@ -322,4 +363,49 @@ export const NavMain = styled.nav`
 			}
     }
 	}
+`;
+
+////////// SideNave
+
+export const NavSide = styled.div`
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+`;
+
+//////////// Products
+
+export const ProductCard = styled.div`
+  width: 700px;
+  height: 700px;
+  background-color: white;
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 400px;
+  }
+`;
+
+export const MainWrapp = styled.div`
+  margin: 40px 10%;
+`;
+
+export const ProducInfo = styled.div`
+  width: 44%;
+  text-align: left;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+	.button-container{
+		display-flex;
+		justify: space-between;
+	}
+  .price-num {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: ${colors.darkBlack};
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;

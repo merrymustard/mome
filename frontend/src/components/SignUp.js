@@ -5,7 +5,10 @@ import {
   MainWrapperield,
   MainBtn,
   RowContainerRadio,
-  CenterizeMe
+  CenterizeMe,
+  RowContainer,
+  SubHeaderHighC,
+  H1a
 } from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
@@ -20,13 +23,13 @@ export default function SignupContainer(props) {
           }}
         >
           <MainWrapperield>
-            <h1 className="tenpix">Registro</h1>
-            <h4 className="tenpix">Datos Personales</h4>
+            <H1a className="tenpix">Registro</H1a>
+            <SubHeaderHighC className="tenpix">Datos Personales</SubHeaderHighC>
             <hr />
             {/* <small>*Campo obligatorio</small>*/}
             <br/> 
             {/* row1 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container">
                 <label for="name">Nombre*</label>
                 <input
@@ -45,9 +48,9 @@ export default function SignupContainer(props) {
                   value={context.formSignup.lastname}
                 />
               </div>
-            </div>
+            </RowContainer>
             {/* row2 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container">
                 <label for="Username">Usuario*</label>
                 <input
@@ -68,9 +71,9 @@ export default function SignupContainer(props) {
                   value={context.formSignup.country}
                 />
               </div>
-            </div>
+            </RowContainer>
             {/* row3 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container">
                 <label for="email">Email*</label>
                 <input
@@ -109,10 +112,10 @@ export default function SignupContainer(props) {
                 </RowContainerRadio>
                 {/* genero radio end */}
               </div>
-            </div>
+            </RowContainer>
 
             {/* row 4 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container ">
                 <label for="password">Password*</label>
                 <input
@@ -122,9 +125,9 @@ export default function SignupContainer(props) {
                   value={context.formSignup.password}
                 />
               </div>
-            </div>
+            </RowContainer>
             <CenterizeMe>
-              <MainBtn type="submit" value="Crear Cuenta"></MainBtn>
+              <MainBtn className="accenBtn" type="submit" value="Crear Cuenta"></MainBtn>
             </CenterizeMe>
           </MainWrapperield>
 

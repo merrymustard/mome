@@ -151,6 +151,7 @@ class MyProvider extends Component {
           newProduct: this.state.newProduct,
           addProduct: this.addProduct,
           stockInputs: this.state.stockInputs,
+          
           // user: this.state.user,
         }
       } >

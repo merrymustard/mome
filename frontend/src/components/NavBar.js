@@ -2,7 +2,6 @@ import React from "react";
 import { MyContext } from "../context";
 import { NavMain } from "../styledComponents/StyledComps";
 import Icon from "@mdi/react";
-import NavProfileSide from "../components/NavProfileSide"
 
 import {
   mdiAccountCircleOutline,
