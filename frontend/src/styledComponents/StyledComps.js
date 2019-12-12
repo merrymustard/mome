@@ -106,13 +106,13 @@ export const MainBtn = styled.input`
   letter-spacing: 1px;
   font-weight: 600;
   color: white;
-  border-radius: 4px;
+  border-radius: 2px;
 `;
 
 export const TemplateBtn = styled.button`
 	height: 60px;
 	display: inline;
-  padding: 20px 30px;
+  padding: 30px 40px;
   border: none;
   font-size: .8rem;
   text-transform: uppercase;
@@ -121,7 +121,7 @@ export const TemplateBtn = styled.button`
   letter-spacing: 1px;
   font-weight: 600;
   color: white;
-  border-radius: 4px;
+  border-radius: 2px;
 	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.4);
 
   #accenBtn {
@@ -134,7 +134,7 @@ export const TemplateBtn = styled.button`
 
 export const TemplateBtnWhite = styled.button`
 	height: 40px;
-  padding: 10px 20px;
+  padding: 20px 30px;
   border: none;
   font-size: .8rem;
   text-transform: uppercase;
@@ -142,7 +142,7 @@ export const TemplateBtnWhite = styled.button`
   letter-spacing: 1px;
   font-weight: 600;
   color: black;
-  border-radius: 4px;
+  border-radius: 2px;
 	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
 
 `;
