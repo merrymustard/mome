@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 	}
 	body{
-		padding-top: 100px;
+		padding-top: 50px;
 		background-color: #EAEBEF;
 		@media (max-width: 768px) {
 			margin-top: 410px;

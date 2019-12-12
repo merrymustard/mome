@@ -25,7 +25,7 @@ export default function SignupContainer(props) {
           <MainWrapperield>
             <H1a className="tenpix">Registro</H1a>
             <SubHeaderHighC className="tenpix">Datos Personales</SubHeaderHighC>
-            <hr />
+            <hr/>
             {/* <small>*Campo obligatorio</small>*/}
             <br/> 
             {/* row1 */}

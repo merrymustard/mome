@@ -110,41 +110,43 @@ export const MainBtn = styled.input`
 `;
 
 export const TemplateBtn = styled.button`
-	height: 60px;
-	display: inline;
+  height: 60px;
+  display: inline;
   padding: 30px 40px;
   border: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   background-color: white;
-	background-color: ${colors.darkBlack};
+  background-color: ${colors.darkBlack};
   letter-spacing: 1px;
   font-weight: 600;
   color: white;
   border-radius: 2px;
-	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.4);
 
   #accenBtn {
     background-color: ${colors.accent};
   }
   #whitebtn {
-    background-color: white!important;
+    background-color: white !important;
   }
 `;
 
 export const TemplateBtnWhite = styled.button`
-	height: 40px;
+  height: 40px;
   padding: 20px 30px;
   border: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   background-color: white;
   letter-spacing: 1px;
   font-weight: 600;
   color: black;
+  &:hover {
+    background-color: ${colors.accent};
+  }
   border-radius: 2px;
-	box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
 `;
 
 ///////////Radiobuttons
@@ -376,10 +378,27 @@ export const NavSide = styled.div`
 //////////// Products
 
 export const ProductCard = styled.div`
-  width: 700px;
-  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 60%;
+  height: 60%;
   background-color: white;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  img[alt="main"] {
+    width: 84%;
+    height: 84%;
+  }
+  @media (max-width: 1200px) {
+    width: 50%;
+    height: 100%;
+    flex-direction: column-reverse;
+    img[alt="main"] {
+      width: 100%;
+      height: 100%;
+    }
+  }
   @media (max-width: 768px) {
     width: 100%;
     height: 400px;
@@ -388,6 +407,49 @@ export const ProductCard = styled.div`
 
 export const MainWrapp = styled.div`
   margin: 40px 10%;
+`;
+
+export const ThumbnaiProduct = styled.img`
+  width: 140%;
+  margin: 8% 0;
+  @media (max-width: 1200px) {
+    width: 13%;
+    height: 100%;
+    margin: 2% 1% 0 1%;
+  }
+`;
+
+export const BtnCarousel = styled.div`
+  width: 140%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: ${colors.lighGray};
+  }
+  @media (max-width: 1200px) {
+    width: 200%;
+    height: 140%;
+    margin-top: 5%;
+    transform: rotate(-90deg);
+		align-items: stretch;
+
+  }
+`;
+
+export const CarouselHorizontal = styled.div`
+  box-sizing: border-box;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+		align-items: stretch;
+
+  }
 `;
 
 export const ProducInfo = styled.div`

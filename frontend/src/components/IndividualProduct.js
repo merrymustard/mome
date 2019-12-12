@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { MyContext } from "../context";
+import * as Icon from "react-feather";
+
 import {
   ProductCard,
   MainWrapp,
@@ -8,7 +10,10 @@ import {
   ProducInfo,
   H1a,
   TemplateBtn,
-  TemplateBtnWhite
+  TemplateBtnWhite,
+  ThumbnaiProduct,
+	CarouselHorizontal,
+	BtnCarousel
 } from "../styledComponents/StyledComps";
 
 export default class IndividualProduct extends Component {
@@ -21,7 +26,23 @@ export default class IndividualProduct extends Component {
         {context => (
           <MainWrapp>
             <RowContainer>
-              <ProductCard></ProductCard>
+              <ProductCard>
+                <CarouselHorizontal>
+                  <BtnCarousel>
+                    <Icon.ChevronUp size='30'/>
+                  </BtnCarousel>
+                  <ThumbnaiProduct src="/images/sweat3.png" alt="name" />
+                  <ThumbnaiProduct src="/images/sweat1.png" alt="name" />
+                  <ThumbnaiProduct src="/images/sweat2.png" alt="name" />
+                  <ThumbnaiProduct src="/images/sweat4.png" alt="name" />
+                  <ThumbnaiProduct src="/images/sweat5.png" alt="name" />
+									<BtnCarousel>
+                    <Icon.ChevronDown size='30'/>
+                  </BtnCarousel>
+                </CarouselHorizontal>
+
+                <img src="/images/sweat3.png" alt="main" />
+              </ProductCard>
               <ProducInfo>
                 <SubHeaderHighC>Brand Name</SubHeaderHighC>
                 <H1a>Product Name</H1a>
@@ -40,7 +61,7 @@ export default class IndividualProduct extends Component {
                 <p>share son social media?</p>
               </ProducInfo>
             </RowContainer>
-						<br />
+            <br />
             <RowContainer>
               <SubHeaderHighC>Descripcion</SubHeaderHighC>
               <SubHeaderHighC>Garantia</SubHeaderHighC>
@@ -63,8 +84,7 @@ export default class IndividualProduct extends Component {
                 dictumst. Nulla ut imperdiet metus.
               </p>
             </RowContainer>
-						<p>related products maybe</p>
-
+            <p>related products maybe</p>
           </MainWrapp>
         )}
       </MyContext.Consumer>
