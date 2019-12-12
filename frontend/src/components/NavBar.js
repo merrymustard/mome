@@ -1,13 +1,9 @@
 import React from "react";
 import { MyContext } from "../context";
 import { NavMain } from "../styledComponents/StyledComps";
-import Icon from "@mdi/react";
+import * as Icon from "react-feather";
 
-import {
-  mdiAccountCircleOutline,
-  mdiHeartOutline,
-  mdiCartOutline
-} from "@mdi/js";
+
 
 export default function NavBar() {
   return (
@@ -16,25 +12,10 @@ export default function NavBar() {
         <NavMain>
           <h1 className="logo">MoMe</h1>
           <div className="main-nav-icons">
-            <Icon className="icons-main-nav"
-              path={mdiHeartOutline}
-              title="Heart Favorites"
-              size={1}
-              color="white"
-            />
-            <Icon
-              path={mdiAccountCircleOutline}
-              title="User Profile"
-              size={1}
-              color="white"
-            />
 
-            <Icon
-              path={mdiCartOutline}
-              title="User Profile"
-              size={1}
-              color="white"
-            />
+            <Icon.Heart size="24" color="white"/>
+            <Icon.User size="24" color="white"/>
+            <Icon.ShoppingCart size="24" color="white"/>
           </div>
         </NavMain>
       )}

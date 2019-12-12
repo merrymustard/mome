@@ -7,10 +7,10 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 	}
 	body{
-		padding-top: 50px;
+		padding-top: 80px;
 		background-color: #EAEBEF;
 		@media (max-width: 768px) {
-			margin-top: 410px;
+			margin-top: 200px;
       }
 	}
 `;

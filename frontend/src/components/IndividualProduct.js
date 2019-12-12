@@ -12,8 +12,10 @@ import {
   TemplateBtn,
   TemplateBtnWhite,
   ThumbnaiProduct,
-	CarouselHorizontal,
-	BtnCarousel
+  CarouselHorizontal,
+  BtnCarousel,
+  QtytyBtns,
+  AddSubstractBtn
 } from "../styledComponents/StyledComps";
 
 export default class IndividualProduct extends Component {
@@ -29,15 +31,15 @@ export default class IndividualProduct extends Component {
               <ProductCard>
                 <CarouselHorizontal>
                   <BtnCarousel>
-                    <Icon.ChevronUp size='30'/>
+                    <Icon.ChevronUp size="30" />
                   </BtnCarousel>
                   <ThumbnaiProduct src="/images/sweat3.png" alt="name" />
                   <ThumbnaiProduct src="/images/sweat1.png" alt="name" />
                   <ThumbnaiProduct src="/images/sweat2.png" alt="name" />
                   <ThumbnaiProduct src="/images/sweat4.png" alt="name" />
                   <ThumbnaiProduct src="/images/sweat5.png" alt="name" />
-									<BtnCarousel>
-                    <Icon.ChevronDown size='30'/>
+                  <BtnCarousel>
+                    <Icon.ChevronDown size="30" />
                   </BtnCarousel>
                 </CarouselHorizontal>
 
@@ -46,16 +48,31 @@ export default class IndividualProduct extends Component {
               <ProducInfo>
                 <SubHeaderHighC>Brand Name</SubHeaderHighC>
                 <H1a>Product Name</H1a>
+                <p>
+                  Duis arcu massa, accumsan sit amet turpis in, pharetra
+                  pulvinar purus.
+                </p>
                 <p className="price-num">$3000</p>
-                <div className="button-container">
-                  <TemplateBtn>Add to cart</TemplateBtn>
-                  <TemplateBtnWhite> Add to wish list></TemplateBtnWhite>
-                </div>
+
+                <QtytyBtns>
+                  <AddSubstractBtn>-</AddSubstractBtn>
+                  <input
+                    min={0}
+                    className="input"
+                    type="number"
+                    placeholder="0"
+                    // value={food.quantity}
+                    // onChange={e => handleQuantity(e, food.name)}
+                  />
+                  <AddSubstractBtn>+</AddSubstractBtn>
+                </QtytyBtns>
                 <br />
                 <div className="button-container">
-                  <TemplateBtnWhite> +</TemplateBtnWhite>
-
-                  <TemplateBtnWhite> -</TemplateBtnWhite>
+                  <TemplateBtn>Add to cart</TemplateBtn>
+                  <TemplateBtnWhite>
+                    Add to wish list
+                    {/* <Icon.Heart size="16" /> */}
+                  </TemplateBtnWhite>
                 </div>
 
                 <p>share son social media?</p>
