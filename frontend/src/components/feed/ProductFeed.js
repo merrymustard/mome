@@ -3,11 +3,10 @@ import React, { Component } from "react";
 import {
   MainWrapp,
   FeedWrapper,
-  FitlerCard,
-  SubHeaderHighC, FeedContainer
+ FeedContainer
 } from "../../styledComponents/StyledComps";
+import FilterBox from "./FilterBox"
 import ProductCard from "./ProductCard";
-import Checkbox from "./Checkbox";
 import { MyContext } from "../../context";
 
 export default class ProductFeed extends Component {
@@ -20,29 +19,7 @@ export default class ProductFeed extends Component {
         {context => (
           <MainWrapp>
             <FeedWrapper>
-              <FitlerCard>
-                <div>
-                  <SubHeaderHighC>Brand</SubHeaderHighC>
-                  <input value="drop down marcas" />
-                </div>
-                <div>
-                  <SubHeaderHighC>Color</SubHeaderHighC>
-                </div>
-                <div className="checkboxwrapper">
-                  <label>
-                    <Checkbox
-                      name="small"
-                      value="s"
-                      checked={context.checked}
-                      onChange={context.handleCheckboxChange}
-                    />
-                    <span style={{ marginLeft: 8 }}>Label Text</span>
-                  </label>
-                </div>
-                <div>
-                  <SubHeaderHighC>Price</SubHeaderHighC>
-                </div>
-              </FitlerCard>
+              <FilterBox/>
               <FeedContainer>
                 <ProductCard />
                 <ProductCard />
