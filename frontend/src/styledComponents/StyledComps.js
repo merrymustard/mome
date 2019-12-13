@@ -113,10 +113,12 @@ export const AddProdTag = styled.form`
 `;
 
 ////////// Buttons
-export const MainBtn = styled.input`
-  padding: 18px 30px;
+export const MainBtn = styled.button`
+ height: 68px;
+  display: inline;
+  padding: 0 50px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   background-color: white;
   background-color: ${colors.accent};
@@ -124,6 +126,12 @@ export const MainBtn = styled.input`
   font-weight: 600;
   color: white;
   border-radius: 2px;
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.5);
+	transition: all .2s ease-in-out;
+  &:hover {
+    background-color: ${colors.purple01};
+		color: ${colors.darkBlack}
+		transform: scale(1.05);   }
 `;
 
 export const TemplateBtn = styled.button`
@@ -144,7 +152,7 @@ export const TemplateBtn = styled.button`
 	&:hover {
     background-color: ${colors.green01};
 		color: ${colors.darkBlack}
-		transform: scale(1.1);   }
+		transform: scale(1.05);   }
 `;
 
 export const TemplateBtnWhite = styled.button`

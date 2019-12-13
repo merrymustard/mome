@@ -1,19 +1,38 @@
+
 import React from "react";
 import { MyContext } from "../context";
-import { ProfileTag, MainWrapperield } from "../styledComponents/StyledComps";
+import {
+  SignUpTag,
+  MainWrapperield,
+  MainBtn,
+  RowContainerRadio,
+  CenterizeMe,
+  RowContainer,
+  SubHeaderHighC,
+  H1a,TemplateBtn
+} from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
   return (
     <MyContext.Consumer>
       {context => (
-        <ProfileTag>
+        <SignUpTag
+          onSubmit={e => {
+            e.preventDefault();
+            context.handleSignup(e);
+            props.history.push("/profile");
+          }}
+        >
           <MainWrapperield>
-            <h1>Información Personal</h1>
-
+            <H1a className="tenpix">Perfil</H1a>
+            <SubHeaderHighC className="tenpix">Datos Personales</SubHeaderHighC>
+            <hr/>
+            {/* <small>*Campo obligatorio</small>*/}
+            <br/> 
             {/* row1 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container">
-                <label for="name">Nombre*</label>
+                <label for="name">Nombre</label>
                 <input
                   type="text"
                   name="name"
@@ -22,21 +41,53 @@ export default function SignupContainer(props) {
                 />
               </div>
               <div className="form-container">
-                <label for="lastname">Apellido*</label>
+                <label for="lastname">Apellido</label>
                 <input
                   type="text"
                   name="lastname"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value="Apellido"
+                  value={context.formSignup.lastname}
                 />
               </div>
-            </div>
+            </RowContainer>
             {/* row2 */}
-            <div className="row-container">
+            <RowContainer>
+              <div className="form-container">
+                <label for="Username">Usuario*</label>
+                <input
+                  type="text"
+                  name="username"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.username}
+                />
+              </div>
+
+              <div className="form-container">
+                <label for="country">Pais</label>
+                <input
+                  type="text"
+                  name="country"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  // drop down con un json de paises... move it lady.
+                  value={context.formSignup.country}
+                />
+              </div>
+            </RowContainer>
+            {/* row3 */}
+            <RowContainer>
+              <div className="form-container">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.email}
+                />
+              </div>
               <div className="form-container">
                 {/* genero radio */}
-                <label for="category">Selecciona tu genero*</label>
-                <div
+                <label for="category">Tu</label>
+                <RowContainerRadio
                   className="row-container-radio"
                   onChange={e => context.handleInput(e, "newProduct")}
                 >
@@ -59,52 +110,19 @@ export default function SignupContainer(props) {
                     />
                     <label for="test2">Mujer</label>
                   </p>
-                </div>
+                </RowContainerRadio>
                 {/* genero radio end */}
               </div>
-
-              <div className="form-container">
-                <label for="country">Pais*</label>
-                <input
-                  type="text"
-                  name="country"
-                  onChange={e => context.handleInput(e, "formSignup")}
-                  // drop down con un json de paises... move it lady.
-                  value="Pais"
-                />
-              </div>
-            </div>
-            {/* row3 */}
-            <div className="row-container">
-              <div className="form-container">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.email}
-                />
-              </div>
-              <div className="form-container">
-                <label for="Username">Usuario</label>
-                <input
-                  type="text"
-                  name="username"
-                  onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.username}
-                />
-              </div>
-            </div>
-
-            {/* button update personal info */}
-            <div className="form-container main-btn">
-              <input type="button" value="Guardar cambios" />
-            </div>
-
+            </RowContainer>
+            <br/>
+            <CenterizeMe>
+              <TemplateBtn className="accenBtn" type="submit" value="save">Guardar Cambios</TemplateBtn>
+            </CenterizeMe>
+            <br/>
             {/* row 4 */}
-            <div className="row-container">
+            <RowContainer>
               <div className="form-container ">
-                <label for="password">Password</label>
+                <label for="password">Contraseña Actual*</label>
                 <input
                   type="password"
                   name="password"
@@ -112,9 +130,22 @@ export default function SignupContainer(props) {
                   value={context.formSignup.password}
                 />
               </div>
-            </div>
+              <div className="form-container ">
+                <label for="password">Contraseña nueva*</label>
+                <input
+                  type="password"
+                  name="password-new"
+                  onChange={e => context.handleInput(e, "formSignup")}
+                  value={context.formSignup.password}
+                />
+              </div>
+            </RowContainer>
+            <br/>
+            <CenterizeMe>
+              <MainBtn className="accenBtn" type="submit" value="change-password">Cambiar contraseña</MainBtn>
+            </CenterizeMe>
           </MainWrapperield>
-        </ProfileTag>
+        </SignUpTag>
       )}
     </MyContext.Consumer>
   );
