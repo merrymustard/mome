@@ -12,7 +12,6 @@ export default function NavBar() {
         <NavMain>
           <h1 className="logo">MoMe</h1>
           <div className="main-nav-icons">
-
             <Icon.Heart size="24" color="white"/>
             <Icon.User size="24" color="white"/>
             <Icon.ShoppingCart size="24" color="white"/>

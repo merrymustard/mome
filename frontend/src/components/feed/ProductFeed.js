@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import {
   MainWrapp,
   FeedWrapper,
- FeedContainer
+  FeedContainer,
 } from "../../styledComponents/StyledComps";
-import FilterBox from "./FilterBox"
+import FilterBox from "./FilterBox";
 import ProductCard from "./ProductCard";
 import { MyContext } from "../../context";
 
@@ -19,10 +19,15 @@ export default class ProductFeed extends Component {
         {context => (
           <MainWrapp>
             <FeedWrapper>
-              <FilterBox/>
+              <FilterBox />
               <FeedContainer>
                 <ProductCard />
                 <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+
               </FeedContainer>
             </FeedWrapper>
           </MainWrapp>

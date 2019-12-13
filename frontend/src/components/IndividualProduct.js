@@ -15,7 +15,8 @@ import {
   CarouselHorizontal,
   BtnCarousel,
   QtytyBtns,
-  AddSubstractBtn
+  AddSubstractBtn,
+  SizeContainer
 } from "../styledComponents/StyledComps";
 
 export default class IndividualProduct extends Component {
@@ -53,7 +54,16 @@ export default class IndividualProduct extends Component {
                   pulvinar purus.
                 </p>
                 <p className="price-num">$3000</p>
-
+                <p>Color selection</p>
+                <p>Size selection</p>
+                <SizeContainer>
+                  <button>XS</button>
+                  <button>S</button>
+                  <button>M</button>
+                  <button>L</button>
+                  <button>XL</button>
+                </SizeContainer>
+                <br/>
                 <QtytyBtns>
                   <AddSubstractBtn>-</AddSubstractBtn>
                   <input
@@ -65,6 +75,7 @@ export default class IndividualProduct extends Component {
                     // onChange={e => handleQuantity(e, food.name)}
                   />
                   <AddSubstractBtn>+</AddSubstractBtn>
+  
                 </QtytyBtns>
                 <br />
                 <div className="button-container">

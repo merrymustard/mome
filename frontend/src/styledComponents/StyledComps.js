@@ -16,7 +16,7 @@ export const colors = {
   mint01: "#50B3A8",
   purple01: "#ABA7FF",
   pink01: "#FBB8B6",
-  gold01: "C99958"
+  gold01: "#C99958"
 };
 
 ////////// Typography
@@ -26,6 +26,8 @@ export const SubHeaderHighC = styled.h4`
   letter-spacing: 2px;
   font-weight: 600;
   color: ${colors.midGray};
+  padding: 0;
+  margin: 6px 0;
 `;
 
 export const H1a = styled.h1`
@@ -34,6 +36,14 @@ export const H1a = styled.h1`
   padding: 0;
   margin: 0;
   color: ${colors.darkBlack};
+`;
+
+export const H3a = styled.h3`
+  font-weight: 400;
+  color: ${colors.darkBlack};
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
 `;
 
 ////////// sign up form
@@ -425,7 +435,7 @@ export const ProductCard = styled.div`
   flex-direction: row;
   width: 60%;
   height: 60%;
-  background-color: white;
+  background-color: transparent;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   img[alt="main"] {
@@ -526,14 +536,15 @@ export const FeedWrapper = styled.div`
 `;
 
 export const FitlerCard = styled.div`
-  width: 20%;
+  width: 30%;
+  height: 100%;
   display: flex;
   padding: 20px;
   box-sizing: border-box;
   flex-direction: column;
   background-color: ${colors.midGray2};
   border-radius: 4px;
-  margin-right: 0 30px;
+  margin-right: 30px;
   color: white;
   text-align: left;
   @media (max-width: 768px) {
@@ -541,23 +552,88 @@ export const FitlerCard = styled.div`
   }
 `;
 
+///////// thumbnails products
 export const CardProdWrap = styled.div`
   box-sizing: border-box;
-  width: 200px;
-  height: 340px;
+  width: 300px;
+  height: auto;
   color: black;
-  border: black solid 1px;
   border-radius: 4px;
-	background-color: red;
-	padding: 8px 0;
-	img{
-		width: 90%;
-	}
+  padding: 8px 0;
+  margin: 0 40px 20px 0;
+  small {
+    margin: 20px 0;
+  }
+  a {
+    color: ${colors.purple01};
+  }
+`;
+////////// IMAGE CONTAINER WITH HEART
+export const Prodimg = styled.div`
+  box-sizing: border-box;
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  img {
+    width: 100%;
+    position: relative;
+  }
+  .Heart:hover {
+    color: pink;
+    position: relative;
+  }
 `;
 
+////////// filter
 export const FeedContainer = styled.div`
-	display: flex;
-	flex-direction: flex-start;
-	flex-wrap: wrap;
+  display: flex;
+  flex-direction: flex-start;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative;
+`;
 
-`
+export const SizeContainer = styled.div`
+  display: flex;
+  flex-direction: start;
+  button {
+    border: solid 1px ${colors.midGray};
+    color: ${colors.midGray};
+    background-color: transparent;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    margin-right: 10px;
+    &:hover 
+      background-color: ${colors.gold01};
+      color: white;
+    }
+    &:selected {
+      background-color: ${colors.darkBlack};
+    }
+  }
+`;
+
+export const FilterSections = styled.div`
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  label {
+    width: 50%;
+  }
+  input {
+    color: white;
+  }
+`;
+
+export const FilterSectionsVertical = styled.div`
+  display: flex;
+  flex-direction: column;
+  label {
+    padding: 0;
+    margin: 0;
+  }
+  input {
+    color: white;
+  }
+`;
