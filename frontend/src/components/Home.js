@@ -100,8 +100,6 @@ export default class Home extends Component {
         <div className="duo-div">
 
         </div>
-
-
       </HomeTag>
     );
   }

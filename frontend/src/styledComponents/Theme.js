@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 		padding-top: 80px;
 		background-color: #EAEBEF;
 		@media (max-width: 768px) {
-			margin-top: 200px;
+			margin-top: 100px;
       }
 	}
 `;

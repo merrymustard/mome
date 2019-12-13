@@ -37,7 +37,8 @@ class MyProvider extends Component {
       image: [],
       category: "",
       subcategory: ""
-    }
+    },
+    checked: false
   };
   componentDidMount() {
     if (document.cookie) {
@@ -135,6 +136,11 @@ class MyProvider extends Component {
     cb();
   };
 
+  handleCheckboxChange = event => {
+    this.setState({ checked: event.target.checked })
+  }
+
+
   render() {
     console.log(this.state)
     return ( <MyContext.Provider value = {
@@ -151,7 +157,8 @@ class MyProvider extends Component {
           newProduct: this.state.newProduct,
           addProduct: this.addProduct,
           stockInputs: this.state.stockInputs,
-          
+          checked: this.state.checked,
+          handleCheckboxChange: this.handleCheckboxChange
           // user: this.state.user,
         }
       } >

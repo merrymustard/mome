@@ -8,6 +8,8 @@ import AddProducts from "./components/AddProducts"
 import NotFound from "./components/404/NotFound.js";
 import NavBar from "./components/NavBar"
 import IndividualProduct from "./components/IndividualProduct";
+import ProductFeed from "./components/feed/ProductFeed";
+
 
 const Router = () => (
   <BrowserRouter>
@@ -20,6 +22,9 @@ const Router = () => (
       <Route exact path="/addproduct" component={AddProducts} />
       {/* //Add actual product id route */}
       <Route exact path="/individualproduct" component={IndividualProduct} />
+      {/* // product feed related to categories  */}
+      <Route exact path="/feed" component={ProductFeed} />
+
 
       <Route component={NotFound} />
     </Switch>

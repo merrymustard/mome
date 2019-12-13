@@ -9,13 +9,14 @@ export const colors = {
   accent: "#f07b7b",
   darkBlack: "#131415",
   midGray: "#888888",
-	lighGray: "#F5F5F5",
-	green01: "#B6B550",
-	orange01: "#FF7F3B",
-	mint01: "#50B3A8",
-	purple01: "#ABA7FF",
-	pink01: "#FBB8B6",
-	gold01: "C99958"
+  midGray2: "#3A3B40",
+  lighGray: "#F5F5F5",
+  green01: "#B6B550",
+  orange01: "#FF7F3B",
+  mint01: "#50B3A8",
+  purple01: "#ABA7FF",
+  pink01: "#FBB8B6",
+  gold01: "C99958"
 };
 
 ////////// Typography
@@ -148,50 +149,47 @@ export const TemplateBtnWhite = styled.button`
   color: black;
   border-radius: 2px;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.25);
-	&:hover {
+  &:hover {
     background-color: ${colors.mint01};
-		color: ${colors.darkBlack}
+    color: ${colors.darkBlack};
   }
 `;
 
 export const AddSubstractBtn = styled.button`
   height: 40px;
-	width: 50px;
-	padding: 0 14px;
+  width: 50px;
+  padding: 0 14px;
   border: none;
   font-size: 1rem;
   font-weight: 600;
-	background-color: ${colors.purple01};
+  background-color: ${colors.purple01};
   color: black;
   border-radius: 2px;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-	&:hover {
+  &:hover {
     background-color: ${colors.purple01};
-		opacity: 70%;
-		color: ${colors.darkBlack}
+    opacity: 70%;
+    color: ${colors.darkBlack};
   }
 `;
 
 export const QtytyBtns = styled.div`
-	width: 0%;
-	display: flex;
-	justify-content: space-between;
-	height: 40px;
-	border: none;
-	margin: 20px 0;
+  width: 0%;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border: none;
+  margin: 20px 0;
 
-	input{
-		font-size: 1.6rem;
-		padding-left: 16px;
-		width: 60px;
-		align-text: right;
-		border: none;
-		box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-
-	}
- ` 
-
-
+  input {
+    font-size: 1.6rem;
+    padding-left: 16px;
+    width: 60px;
+    align-text: right;
+    border: none;
+    box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
+  }
+`;
 
 ///////////Radiobuttons
 export const RowContainerRadio = styled.div`
@@ -521,3 +519,45 @@ export const ProducInfo = styled.div`
     width: 100%;
   }
 `;
+
+export const FeedWrapper = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+export const FitlerCard = styled.div`
+  width: 20%;
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  background-color: ${colors.midGray2};
+  border-radius: 4px;
+  margin-right: 0 30px;
+  color: white;
+  text-align: left;
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
+`;
+
+export const CardProdWrap = styled.div`
+  box-sizing: border-box;
+  width: 200px;
+  height: 340px;
+  color: black;
+  border: black solid 1px;
+  border-radius: 4px;
+	background-color: red;
+	padding: 8px 0;
+	img{
+		width: 90%;
+	}
+`;
+
+export const FeedContainer = styled.div`
+	display: flex;
+	flex-direction: flex-start;
+	flex-wrap: wrap;
+
+`
