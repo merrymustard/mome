@@ -51,7 +51,6 @@ export const SignUpTag = styled.form`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 6% 10%;
   text-align: left;
@@ -62,6 +61,10 @@ export const SignUpTag = styled.form`
     font-size: 1.2rem;
     color: #97989a;
   }
+  @media (max-width: 768px) {
+     padding-top: 50%;
+     margin-bottom: 200px;
+    }
 `;
 
 // add product form
@@ -155,6 +158,7 @@ export const TemplateBtn = styled.button`
 		transform: scale(1.05);   }
 `;
 
+
 export const TemplateBtnWhite = styled.button`
   height: 40px;
   padding: 0 30px;
@@ -167,9 +171,11 @@ export const TemplateBtnWhite = styled.button`
   color: black;
   border-radius: 2px;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.25);
+  transition: all .1s ease-in-out;
   &:hover {
     background-color: ${colors.mint01};
     color: ${colors.darkBlack};
+    width: 40%;
   }
 `;
 
@@ -278,7 +284,7 @@ export const MainWrapperield = styled.div`
       width: 100%;
     }
 		hr{
-		border: ${colors.secondaryLight} solid 0.5px;
+		border: ${colors.midGray2} solid 0.5px;
 		}
 	small{
 		float: right;
@@ -613,7 +619,6 @@ export const SizeContainer = styled.div`
     margin-right: 10px;
     &:hover 
       background-color: ${colors.gold01};
-      color: white;
     }
     &:selected {
       background-color: ${colors.darkBlack};

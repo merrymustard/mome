@@ -4,7 +4,6 @@ import { MyContext } from "../context";
 import {
   SignUpTag,
   MainWrapperield,
-  MainBtn,
   RowContainerRadio,
   CenterizeMe,
   RowContainer,
@@ -142,7 +141,7 @@ export default function SignupContainer(props) {
             </RowContainer>
             <br/>
             <CenterizeMe>
-              <MainBtn className="accenBtn" type="submit" value="change-password">Cambiar contraseña</MainBtn>
+              <TemplateBtn className="accenBtn" type="submit" value="change-password">Cambiar contraseña</TemplateBtn>
             </CenterizeMe>
           </MainWrapperield>
         </SignUpTag>

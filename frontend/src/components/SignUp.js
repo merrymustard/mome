@@ -126,8 +126,9 @@ export default function SignupContainer(props) {
                 />
               </div>
             </RowContainer>
+            <br/>
             <CenterizeMe>
-              <MainBtn className="accenBtn" type="submit" value="Crear Cuenta"></MainBtn>
+              <MainBtn className="accenBtn" type="submit" value="Crear Cuenta">Crear cuenta</MainBtn>
             </CenterizeMe>
           </MainWrapperield>
 
