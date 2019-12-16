@@ -4,25 +4,27 @@ const {
 } = require('mongoose');
 const PLM = require("passport-local-mongoose");
 const userSchema = new Schema({
-    username: String,
     password: String,
     name: String,
     lastname: String,
     email: String,
     image: String,
+    address: String,
     country : String,
     gender: {
         type: String,
-        enum:["men", "women"]
+        enum:["Hombre", "Mujer"]
     },
-    orders: [{}],
+    orders: [
+        {type:Schema.Types.ObjectId,
+        ref:"Order"}
+    ],
     wishList: [{
         type: Schema.Types.ObjectId,
         ref: "Product"
     }]
 })
-userSchema.plugin(PLM, {
-    usernameField: 'username'
-});
+
+userSchema.plugin(PLM, { usernameField: "email" });
 
 module.exports = model('User', userSchema);

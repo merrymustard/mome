@@ -3,16 +3,25 @@ import React, { Component } from "react";
 import {
   MainWrapp,
   FeedWrapper,
-  FeedContainer,
+  FeedContainer
 } from "../../styledComponents/StyledComps";
 import FilterBox from "./FilterBox";
 import ProductCard from "./ProductCard";
 import { MyContext } from "../../context";
 
 export default class ProductFeed extends Component {
+  state = {
+    feed: []
+  };
   showSettings(event) {
     event.preventDefault();
   }
+  componentDidMount() {
+    this.context.getProducts();
+    this.setState({ feed: this.context.productFeed });
+    console.log(this.context.productFeed);
+  }
+  
   render() {
     return (
       <MyContext.Consumer>
@@ -21,13 +30,9 @@ export default class ProductFeed extends Component {
             <FeedWrapper>
               <FilterBox />
               <FeedContainer>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-
+                {this.state.feed.map(e => (
+                  <ProductCard product={e} />
+                ))}
               </FeedContainer>
             </FeedWrapper>
           </MainWrapp>
@@ -36,3 +41,4 @@ export default class ProductFeed extends Component {
     );
   }
 }
+ProductFeed.contextType = MyContext;

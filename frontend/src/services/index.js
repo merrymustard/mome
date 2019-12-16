@@ -28,7 +28,23 @@ const MY_SERVICE = {
   },
   addproduct: async(product)=>{
     return await service.post("/addproduct", product)
+  },
+  deleteProductFromWishlist: async(productId)=>{
+    return await service.post("/delete-product-from-wishlist", productId)
+  },
+  deleteProduct: async (productId)=>{
+    return await service.post("/delete-product", productId)
+  },
+  getProducts: async (query)=> {
+    return await service.get("/products", query)
+  },
+  productDetail: async (productId)=> {
+    return await service.get("/product-detail", productId)
+  },
+  createOrder: async(order)=> {
+    return await service.post("/new-order", order)
   }
+
 };
 
 export default MY_SERVICE;

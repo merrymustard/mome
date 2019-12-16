@@ -15,7 +15,7 @@ router.post('/login', passport.authenticate('local'), login);
 router.post('/signup', signup);
 router.post('/edit', edit);
 router.post('/logout', logout);
-router.post("/upload", uploadCloud.single("photoURL"), upload);
+//router.post("/upload", uploadCloud.single("photoURL"), upload);
 router.get('/loggedin', isAuth, loggedin)
 
 

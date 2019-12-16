@@ -51,15 +51,6 @@ export default function SignupContainer(props) {
             </RowContainer>
             {/* row2 */}
             <RowContainer>
-              <div className="form-container">
-                <label for="Username">Usuario*</label>
-                <input
-                  type="text"
-                  name="username"
-                  onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.username}
-                />
-              </div>
 
               <div className="form-container">
                 <label for="country">Pais*</label>
@@ -88,26 +79,25 @@ export default function SignupContainer(props) {
                 <label for="category">Selecciona tu genero*</label>
                 <RowContainerRadio
                   className="row-container-radio"
-                  onChange={e => context.handleInput(e, "newProduct")}
                 >
                   <p>
                     <input
                       type="radio"
                       id="test1"
-                      name="category"
+                      name="gender"
                       value="Hombre"
-                      checked
                     />
-                    <label for="test1">Hombre</label>
+                    <label value = "Hombre" onClick={e=> context.handleRadio(e)} name="gender" for="test1">Hombre</label>
                   </p>
                   <p>
                     <input
                       type="radio"
                       id="test2"
-                      name="category"
+                      name="gender"
                       value="Mujer"
+                      
                     />
-                    <label for="test2">Mujer</label>
+                    <label for="test2" value = "Mujer"onClick={e=> context.handleRadio(e)} name="gender">Mujer</label>
                   </p>
                 </RowContainerRadio>
                 {/* genero radio end */}

@@ -62,9 +62,9 @@ export const SignUpTag = styled.form`
     color: #97989a;
   }
   @media (max-width: 768px) {
-     padding-top: 50%;
-     margin-bottom: 200px;
-    }
+    padding-top: 50%;
+    margin-bottom: 200px;
+  }
 `;
 
 // add product form
@@ -137,6 +137,11 @@ export const MainBtn = styled.button`
 		transform: scale(1.05);   }
 `;
 
+export const BtnTransparent = styled.button`
+  background-color: transparent;
+  border: none;
+`;
+
 export const TemplateBtn = styled.button`
   height: 68px;
   display: inline;
@@ -158,7 +163,6 @@ export const TemplateBtn = styled.button`
 		transform: scale(1.05);   }
 `;
 
-
 export const TemplateBtnWhite = styled.button`
   height: 40px;
   padding: 0 30px;
@@ -171,7 +175,7 @@ export const TemplateBtnWhite = styled.button`
   color: black;
   border-radius: 2px;
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.25);
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
     background-color: ${colors.mint01};
     color: ${colors.darkBlack};
@@ -410,7 +414,9 @@ export const ProfileTag = styled.form`
 export const NavMain = styled.nav`
 .logo{
 	color: white;
+  padding-right: 20px;
 }
+
 	width: 100vw;
 	height: 60px;
 	background-color: ${colors.darkBlack};
@@ -426,11 +432,20 @@ export const NavMain = styled.nav`
 		display: flex;
 		align-content: center;
 		justify-content: space-between;
+
 		@media (max-width: 768px) {
 				width:24%;
 			}
     }
 	}
+`;
+
+export const CatButton = styled.button`
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  padding: 0 10px;
 `;
 
 ////////// SideNave
