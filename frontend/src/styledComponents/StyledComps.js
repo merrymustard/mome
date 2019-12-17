@@ -209,7 +209,7 @@ export const QtytyBtns = styled.div`
   border: none;
   margin: 20px 0;
 
-  input {
+  .quantity {
     font-size: 1.6rem;
     padding-left: 16px;
     width: 60px;

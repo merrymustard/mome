@@ -1,4 +1,3 @@
-
 import React from "react";
 import { MyContext } from "../context";
 import {
@@ -8,7 +7,8 @@ import {
   CenterizeMe,
   RowContainer,
   SubHeaderHighC,
-  H1a,TemplateBtn
+  H1a,
+  TemplateBtn
 } from "../styledComponents/StyledComps";
 
 export default function SignupContainer(props) {
@@ -25,9 +25,9 @@ export default function SignupContainer(props) {
           <MainWrapperield>
             <H1a className="tenpix">Perfil</H1a>
             <SubHeaderHighC className="tenpix">Datos Personales</SubHeaderHighC>
-            <hr/>
+            <hr />
             {/* <small>*Campo obligatorio</small>*/}
-            <br/> 
+            <br />
             {/* row1 */}
             <RowContainer>
               <div className="form-container">
@@ -51,16 +51,6 @@ export default function SignupContainer(props) {
             </RowContainer>
             {/* row2 */}
             <RowContainer>
-              <div className="form-container">
-                <label for="Username">Usuario*</label>
-                <input
-                  type="text"
-                  name="username"
-                  onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.username}
-                />
-              </div>
-
               <div className="form-container">
                 <label for="country">Pais</label>
                 <input
@@ -113,11 +103,13 @@ export default function SignupContainer(props) {
                 {/* genero radio end */}
               </div>
             </RowContainer>
-            <br/>
+            <br />
             <CenterizeMe>
-              <TemplateBtn className="accenBtn" type="submit" value="save">Guardar Cambios</TemplateBtn>
+              <TemplateBtn className="accenBtn" type="submit" value="save">
+                Guardar Cambios
+              </TemplateBtn>
             </CenterizeMe>
-            <br/>
+            <br />
             {/* row 4 */}
             <RowContainer>
               <div className="form-container ">
@@ -139,9 +131,15 @@ export default function SignupContainer(props) {
                 />
               </div>
             </RowContainer>
-            <br/>
+            <br />
             <CenterizeMe>
-              <TemplateBtn className="accenBtn" type="submit" value="change-password">Cambiar contraseña</TemplateBtn>
+              <TemplateBtn
+                className="accenBtn"
+                type="submit"
+                value="change-password"
+              >
+                Cambiar contraseña
+              </TemplateBtn>
             </CenterizeMe>
           </MainWrapperield>
         </SignUpTag>

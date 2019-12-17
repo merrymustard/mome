@@ -38,10 +38,10 @@ export default class LogIn extends Component {
 
               <RowContainer>
                 <div className="form-container">
-                  <label for="Username">Usuario*</label>
+                  <label for="Username">Email*</label>
                   <input
                     type="text"
-                    name="username"
+                    name="email"
                     onChange={e => context.handleInput(e, "loginForm")}
                     value={context.loginForm.username}
                   />

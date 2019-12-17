@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MyContext } from "../../context";
 import Carousel from "./Carousel";
 import * as Icon from "react-feather";
+import styled from "styled-components"
 
 import {
   ProductCard,
@@ -19,6 +20,12 @@ import {
   AddSubstractBtn,
   SizeContainer
 } from "../../styledComponents/StyledComps";
+
+export const productqty = styled.div`
+  width: 75px;
+  background-color:white;
+  color:blue;
+  text-align:center`
 
 export default class IndividualProduct extends Component {
   showSettings(event) {
@@ -57,34 +64,31 @@ export default class IndividualProduct extends Component {
                 <p className="price-num">$3000</p>
                 <p>Color selection</p>
                 <p>Size selection</p>
+                <form onSubmit = {e=> {e.preventDefault(); context.addProductToCart() }} > 
                 <SizeContainer>
-                  <button>XS</button>
-                  <button>S</button>
-                  <button>M</button>
-                  <button>L</button>
-                  <button>XL</button>
+                  <button name="size" onClick={e => {e.preventDefault(); context.handleSize(e)}} value="XS">XS</button>
+                  <button name="size" onClick={e => {e.preventDefault(); context.handleSize(e)}} value="S">S</button>
+                  <button name="size" onClick={e => {e.preventDefault(); context.handleSize(e)}} value="M">M</button>
+                  <button name="size" onClick={e => {e.preventDefault(); context.handleSize(e)}} value="L">L</button>
+                  <button name="size" onClick={e => {e.preventDefault(); context.handleSize(e)}} value="XL">XL</button>
                 </SizeContainer>
                 <br />
                 <QtytyBtns>
-                  <AddSubstractBtn>-</AddSubstractBtn>
-                  <input
-                    min={0}
-                    className="input"
-                    type="number"
-                    placeholder="0"
-                    // value={food.quantity}
-                    // onChange={e => handleQuantity(e, food.name)}
-                  />
-                  <AddSubstractBtn>+</AddSubstractBtn>
+                  <AddSubstractBtn onClick={e => {e.preventDefault(); context.handleProductQty(false)}}>-</AddSubstractBtn>
+                  <div className="quantity">
+                    <p>{String(context.newProduct.quantity)}</p>
+                  </div>
+                  <AddSubstractBtn onClick={e => {e.preventDefault(); context.handleProductQty(true)}}>+</AddSubstractBtn>
                 </QtytyBtns>
                 <br />
                 <div className="button-container">
-                  <TemplateBtn>Add to cart</TemplateBtn>
+                  <TemplateBtn type="submit">Add to cart</TemplateBtn>
                   <TemplateBtnWhite>
                     Add to wish list
                     {/* <Icon.Heart size="16" /> */}
                   </TemplateBtnWhite>
                 </div>
+                </form>
 
                 <p>share son social media?</p>
               </ProducInfo>

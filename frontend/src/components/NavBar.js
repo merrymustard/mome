@@ -16,39 +16,29 @@ const StyleLink = styled(Link)`
 
 class NavBar extends Component {
   state = {
-    heart: {},
-    user: {},
-    shoppingCart: {}
+    navbar:{
+      heart: false,
+      user: false,
+      shoppingcart: false
+    }
   };
 
   handleClick = (e, icon) => {
     if (icon === "heart") {
-      this.setState({
-        heart: {
-          Likes: "Likes"
-        },
-        user: {},
-        shoppingCart: {}
-      });
+      this.setState({navbar:{
+        heart:true,
+        user:false,
+        shoppingcart:false}})
     } else if (icon === "user") {
-      this.setState({
-        heart: {},
-        user: {
-          info: "info",
-          orden: "orden",
-          address: "address",
-          logout: "logout"
-        },
-        shoppingCart: {}
-      });
+      this.setState({navbar:{
+        heart:false,
+        user:true,
+        shoppingcart:false}});
     } else if (icon === "shoppingcart") {
-      this.setState({
-        heart: {},
-        user: {},
-        shoppingCart: {
-          shoppingCart: "products"
-        }
-      });
+      this.setState({navbar:{
+        heart:false,
+        user:false,
+        shoppingcart:true}});
     }
   };
   render() {
@@ -56,16 +46,19 @@ class NavBar extends Component {
       <MyContext.Consumer>
         {context => (
           <NavMain>
-            <Collapsible items={[this.state]} open={context.open} />
+            <Collapsible navbar={this.state.navbar} open={context.open} />
             <div className="main-nav-icons">
               <StyleLink to="/">
                 <h1 className="logo">MoMe</h1>
               </StyleLink>
               <CatButton>Hombres</CatButton>
               <CatButton>Mujeres</CatButton>
+              <StyleLink to="/feed">
+                <h1 className="logo">feed</h1>
+              </StyleLink>
             </div>
 
-            <div className="main-nav-icons">
+            {context.loggedUser ? (<div className="main-nav-icons">
               <BtnTransparent
                 iicon="1"
                 onClick={e => {
@@ -97,7 +90,11 @@ class NavBar extends Component {
                   color="white"
                 />
               </BtnTransparent>
-            </div>
+            </div>) : (
+                <Link to="/login"><Icon.User icon={"user"} size="24" color="white" /></Link>
+              )}
+
+            
           </NavMain>
         )}
       </MyContext.Consumer>

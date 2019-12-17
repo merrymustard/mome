@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom"
 import { MyContext } from "../context";
 import { NavSide } from "../styledComponents/StyledComps";
 
@@ -28,7 +29,7 @@ export default class NavProfileSide extends Component {
                 <a>Mis Favoritos</a>
               </li>
             </ul>
-            <button>Logout</button>
+            {context.loggedUser ? (<Link to= "/login">Login</Link>): (<button onClick = {context.handleLogout}>Logout</button>)}
           </NavSide>
         )}
       </MyContext.Consumer>

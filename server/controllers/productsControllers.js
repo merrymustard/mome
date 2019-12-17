@@ -37,13 +37,28 @@ exports.deleteProductFromWishlist = async (req, res)=> {
 	res.status(201).json({usr})
 }
 
+exports.addProductToWishList = async (req, res)=>{ 
+	const {_id} = req.user
+	const usr = User.findByIdAndUpdate(_id, {
+		$push: {
+			wishList:req.body.article
+		}
+	},
+	{new:true})
+	res.status(201).json({usr})
+}
+
 exports.getProducts = async (req, res) =>{
 	const products = await Product.find()
 	res.status(200).json({products})
 }
 
 exports.productDetail = async(req, res)=> {
-	const product = await Product.findById(req.body.productId)
+	const {productId} = req.body
+	console.log(req.body, "esto es el req body")
+	console.log(productId, "existes?")
+	const product = await Product.findById(productId)
+	console.log(product)
 	res.status(200).json({product})
 }
 

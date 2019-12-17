@@ -16,9 +16,8 @@ class MyProvider extends Component {
       email: ""
     },
     newCartProduct: {
-      id: String,
-      price: Number,
-      quantity: Number
+      quantity: 0,
+      size: ""
     },
     createdOrder: {},
     loginForm: {
@@ -45,7 +44,9 @@ class MyProvider extends Component {
     productDetail: {},
     open: false,
     Cart: [],
-    carousel: 0
+    carousel: 0,
+    wishListProds:[],
+    totalValueCart:0,
   };
 
   componentDidMount() {
@@ -61,6 +62,19 @@ class MyProvider extends Component {
         .catch(err => console.log(err));
     }
   }
+  // componentDidUpdate(prevState, prevProps) {
+  //   if (prevState.Cart.length != this.state.Cart.length){
+      
+  //     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  //     const productsArray = this.state.Cart.map(e => ({
+  //       prod: { product: e.id, quantity: e.quantity }
+  //     }));
+  //     const totalValue = productsArray
+  //       .map(e => e.quantity * e.price)
+  //       .reduce(reducer);
+  //     this.setState({totalValueCart:totalValue})
+  //   }
+  // }
   handleRadio = e => {
     const genderValue = e.target.innerText;
     if (genderValue === "Mujer") {
@@ -76,12 +90,19 @@ class MyProvider extends Component {
 
   handleInput = (e, obj) => {
     const a = this.state[obj];
+    console.log(a)
     const key = e.target.name;
     a[key] = e.target.value;
     this.setState({
       obj: a
     });
   };
+  handleSize = async (e) =>{
+    console.log(e.target.value, 'hey')
+    await this.setState({newCartProduct:{...this.state.newCartProduct, size:e.target.value}})
+    console.log(this.state.newCartProduct.size)
+    console.log(this.state.newCartProduct)
+  }
 
   handleSignup = async e => {
     e.preventDefault();
@@ -100,6 +121,14 @@ class MyProvider extends Component {
       newProduct: addStock
     });
   };
+  handleProductQty = a =>{
+    console.log(this.state.newCartProduct.quantity)
+    let x = this.state.newCartProduct.quantity
+    if(a) {x++; console.log('hey'); this.setState({newCartProduct:{...this.state.newCartProduct,quantity:x}})}
+    if(!a){x--; console.log('ho'); this.setState({newCartProduct:{...this.state.newCartProduct,quantity:x}})}
+    console.log(x)
+    console.log(this.state.newCartProduct)
+  }
 
   addProduct = async e => {
     e.preventDefault();
@@ -147,7 +176,7 @@ class MyProvider extends Component {
       loggedUser: false,
       user: {}
     });
-    cb();
+    this.props.history.push("/"); // ESTO NO FUNCIONA!!!!
   };
 
   handleCheckboxChange = event => {
@@ -165,29 +194,53 @@ class MyProvider extends Component {
   };
 
 
-  
+
   deleteProduct = async e => {
     // HAY QUE PONER EN EL ID DEL BOTÓN EL ID DEL PRODUCTO A ELIMINAR
     //HAY QUE HACER UN COMPONENT DID CHANGE PARA REFRESCAR LA PÁGINA Y ACTUALIZARLA
-    await MY_SERVICE.deleteProduct(e.target.id);
+    const usr = await MY_SERVICE.deleteProduct(e.target.id);
+    this.setState({wishListProds:usr.wishList})
   };
+
+
+  addProductToWishlist = async e =>{
+    
+    const usr = await MY_SERVICE.addProductToWishlist(e.target.id)
+    this.setState({wishListProds:usr.wishList})
+  }
   deleteProductFromWishlist = async e => {
-    await MY_SERVICE.deleteProductFromWishlist(e.target.id);
+    const  { newlist } = await MY_SERVICE.deleteProductFromWishlist(e.target.id);
+    this.setState({wishListProds:newlist.usr.wishList})
   };
   getProducts = async () => {
-    const prods = await MY_SERVICE.getProducts();
-    this.setState({ productFeed: prods });
+    const {data} = await MY_SERVICE.getProducts();
+    this.setState({ productFeed: data.products });
   };
-  getProductDetail = async e => {
+  getProductDetail = async (e, cb) => {
     // LA CARD DEL PRODUCTO TIENE QUE TENER EL ONCLICK CON ESTA FUNCIÓN Y TIENE QUE TENER EL ID CON EL ID DEL PRODUCTO EN CUESTIÓN
-    const product = await MY_SERVICE.productDetail(e.target.id);
-    this.setState({ productDetail: product });
+    const {data} = await MY_SERVICE.productDetail("5df017ed70fca855aae1cded");
+    this.setState({ productDetail: data.product });
   };
   // ESTA BELLEZZA VA EN EL SUBMIT BUTTON DE ADD TO CART, EN LOS INPUTS DE LOS PRODUCTOS TIENE QUE IR EL HANDLEINPUT RECIBIENDO COMO SEGUNDO PARAMETRO "newCartProduct" PARA QUE LO AÑADA A ESE FORM
-  addProductToCart = () => {
-    const prod = this.state.newCartProduct;
-    const cart = this.state.Cart.push(prod);
+  addProductToCart = async () => {
+    const productId = "5df017ed70fca855aae1cded"
+    const cart = this.state.Cart
+    const {data} = await MY_SERVICE.productDetail(productId)
+    console.log(data)
+    console.log(this.state.newCartProduct)
+    data.product.quantity = this.state.newCartProduct.quantity
+    data.product.size = this.state.newCartProduct.size
+    cart.push(data.product)
     this.setState({ Cart: cart });
+    console.log(this.state.Cart)
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const productsArray = this.state.Cart.map(e => ({
+        prod: { product: e.id, quantity: e.quantity }
+      }));
+    const totalValue = productsArray
+      .map(e => e.quantity * e.price)
+      .reduce(reducer);
+    this.setState({totalValueCart:totalValue})
   };
   // CONFIRMACIÓN DE LA ORDEN
   submitOrder = async () => {
@@ -218,8 +271,8 @@ class MyProvider extends Component {
     }
   };
 
-  render() {
-    console.log(this.state);
+  render() {;
+    console.log(this.state.newCartProduct)
     return (
       <MyContext.Provider
         value={{
@@ -243,6 +296,7 @@ class MyProvider extends Component {
           handleRadio: this.handleRadio,
           deleteProduct: this.deleteProduct,
           deleteProductFromWishlist: this.deleteProductFromWishlist,
+          addProductToWishlist: this.addProductToWishlist,
           getProducts: this.getProducts,
           getProductDetail: this.getProductDetail,
           addProductToCart: this.addProductToCart,
@@ -252,7 +306,11 @@ class MyProvider extends Component {
           createdOrder: this.state.createdOrder,
           productFeed: this.state.productFeed,
           productDetail: this.state.productDetail,
-          Cart: this.state.Cart
+          Cart: this.state.Cart,
+          wishListProds: this.state.wishListProds,
+          handleProductQty: this.handleProductQty,
+          handleSize: this.handleSize,
+          totalValueCart: this.totalValueCart
 
           // user: this.state.user,
         }}

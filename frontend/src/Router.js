@@ -20,7 +20,7 @@ const Router = () => (
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/addproduct" component={AddProducts} />
       {/* //Add actual product id route */}
-      <Route exact path="/individualproduct" component={IndividualProduct} />
+      <Route exact path="/detail" component={IndividualProduct} />
       {/* // product feed related to categories  */}
       <Route exact path="/feed" component={ProductFeed} />
       <Route exact path="/info" component={Profile} />

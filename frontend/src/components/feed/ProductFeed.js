@@ -18,10 +18,8 @@ export default class ProductFeed extends Component {
   }
   componentDidMount() {
     this.context.getProducts();
-    this.setState({ feed: this.context.productFeed });
-    console.log(this.context.productFeed);
   }
-  
+
   render() {
     return (
       <MyContext.Consumer>
@@ -30,7 +28,7 @@ export default class ProductFeed extends Component {
             <FeedWrapper>
               <FilterBox />
               <FeedContainer>
-                {this.state.feed.map(e => (
+                {context.productFeed.map(e => (
                   <ProductCard product={e} />
                 ))}
               </FeedContainer>

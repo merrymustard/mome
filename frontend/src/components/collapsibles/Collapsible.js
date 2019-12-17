@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { MyContext } from "../../context";
 import { Link } from "react-router-dom";
+import { colors, TemplateBtn } from "../../styledComponents/StyledComps";
 
 const StyledCollapsible = styled.section`
   padding: 20px;
@@ -36,35 +37,101 @@ const RenderItem = (item, route) => {
 };
 
 const StyleLink = styled(Link)`
-  color: red;
+  color: ${colors.darkBlack};
+  text-decoration: none;
+  padding: 20px;
+  font-size: 1.4rem;
 `;
 
-const Item = item => {
-  const arr = [];
-  for (let key in item) {
-    if (Object.keys(item[key]).length !== 0) {
-      for (let key2 in item[key]) {
-        arr.push(RenderItem(key2));
-        console.log(item[key]);
-      }
-    }
-  }
-  return <StyledItem>{arr}</StyledItem>;
-};
+const SlideMenuProf = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-export default function Collapsible({ items, open }) {
+export default function Collapsible(props) {
   return (
     <MyContext.Consumer>
       {context => (
-        <StyledCollapsible open={open}>
+        <StyledCollapsible open={props.open}>
           <button onClick={context.toggleMenu}>X</button>
-          {items.map((item, idx) => (
-            <Item key={idx} {...item} />
-          ))}
+          {props.navbar.user ? (
+            <SlideMenuProf>
+              <StyleLink to="/profile">Profile</StyleLink>
+              <StyleLink to="/orders">My Orders</StyleLink>
+              <StyleLink to="/profile-address">Adresses</StyleLink>
+              <TemplateBtn onClick={context.handleLogout}>Logout</TemplateBtn>
+            </SlideMenuProf>
+          ) : props.navbar.heart ? (
+            <>
+              <h2>WishList</h2>
+              <div className="wishlist-elements-container">
+                {context.wishListProds.map(e => (
+                  <h2>{e.name}</h2>
+                ))}
+              </div>
+            </>
+          ) : props.navbar.shoppingcart ? (
+            <>
+              <h2>Your Cart</h2>
+              <div className="cart-products">
+                {context.Cart.map(e => (
+                  <>
+                    <p>{e.name}</p>
+                    <p>
+                      {e.size} : {e.quantity}
+                    </p>
+                    <p>price: {e.price}</p>
+                  </>
+                ))}
+                <button onClick={context.submitOrder}>Submit Order</button>
+                <p>Total: {context.totalValueCart}</p>
+              </div>
+            </>
+          ) : null}
         </StyledCollapsible>
       )}
     </MyContext.Consumer>
   );
+}
+{
+  /* {if {}}
+          {items.map((item, idx) => (
+            <Item key={idx} {...item} />
+          ))} */
+}
+{
+  /* {
+            (navbar.user) 
+            ? (<Link to="/profile"></Link>) 
+            : (navbar.heart) 
+            ? (
+              <>
+              <h2>WishList</h2>
+              <div className = "wishlist-elements-container">
+              {context.wishListProds.map(e=>(
+
+                <h2>{e.name}</h2>
+
+              ))}
+              </div> 
+              </>
+              ) 
+            : (navbar.shoppingcart)
+            ? (
+                <>
+                <h2>Your Cart</h2>
+              <div className = "cart-products">
+                {context.Cart.map(e=>(
+                  <p>{e.name} : {e.price}</p>
+                ))}
+                <p>Total: {state.Cart.map(e => ({}))} </p>
+                </div>
+                </>
+              )
+            : null
+          } */
 }
 // export default Collapsible;
 

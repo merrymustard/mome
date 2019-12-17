@@ -39,10 +39,13 @@ const MY_SERVICE = {
     return await service.get("/products", query)
   },
   productDetail: async (productId)=> {
-    return await service.get("/product-detail", productId)
+    return await service.post("/product-detail", {productId:productId})
   },
   createOrder: async(order)=> {
     return await service.post("/new-order", order)
+  },
+  addProductToWishlist: async article =>{
+    return await service.post("/add-product-to-wishlist", {article})
   }
 
 };
