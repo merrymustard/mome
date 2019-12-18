@@ -7,10 +7,10 @@ export const FeedWrapper = styled.div`
 `
 
 export const FitlerCard = styled.div`
-  width: 300px;
+  width: 230px;
   height: 100%;
   display: flex;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   flex-direction: column;
   background-color: ${colors.midGray2};
@@ -58,11 +58,14 @@ export const Prodimg = styled.div`
   height: 265px;
   z-index: -100;
   transition: all 0.2s ease-in-out;
+  border-radius: 4px;
   &:hover {
     transform: scale(1.05);
+    box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.36);
   }
   img {
     width: 100%;
     position: relative;
+    border-radius: 4px;
   }
 `

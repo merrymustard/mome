@@ -31,7 +31,8 @@ export const StyleLink = styled.a`
 
 export const SubHeaderHighC = styled.h4`
   text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
   font-weight: 600;
   color: ${colors.midGray};
   padding: 0;
@@ -469,19 +470,6 @@ export const NavSide = styled.div`
 
 export const MainWrapp = styled.div`
   margin: 40px 10%;
-`
-
-export const ThumbnaiProduct = styled.img`
-  width: 140%;
-  margin: 8% 0;
-  @media (max-width: 1200px) {
-    width: 13%;
-    height: 100%;
-    margin: 2% 1% 0 1%;
-  }
-  @media (max-width: 768px) {
-    height: 80%;
-  }
 `
 
 // export const BtnCarousel = styled.div`

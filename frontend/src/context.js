@@ -63,7 +63,7 @@ class MyProvider extends Component {
             loggedUser: true,
             user: data.user
           })
-          Swal.fire(`Welcome back ${data.user.name} `, "", "success")
+          // Swal.fire(`Welcome back ${data.user.name} `, "", "success")
         })
         .catch(err => console.log(err))
     }

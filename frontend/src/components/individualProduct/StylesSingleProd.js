@@ -9,15 +9,17 @@ export const ProductCard = styled.div`
   width: 60%;
   height: 60%;
   background-color: transparent;
-  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 20px 34px -10px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  border-radius: 4px;
   img[alt="main"] {
     width: 84%;
     height: 84%;
+    border-radius: 4px;
   }
   @media (max-width: 1200px) {
     width: 50%;
-    height: 100%;
+    height: 50%;
     flex-direction: column-reverse;
     img[alt="main"] {
       width: 100%;
@@ -26,7 +28,7 @@ export const ProductCard = styled.div`
   }
   @media (max-width: 768px) {
     width: 100%;
-    height: 460px;
+    height: 100%;
   }
 `
 
@@ -37,6 +39,16 @@ export const ProducInfo = styled.div`
   padding: 4%;
   display: flex;
   flex-direction: column;
+  p{
+    color: ${colors.midGray2};
+    opacity: 70%;
+    padding: 0px;
+    margin: 10px 0;
+    text-align: left!important;
+  }
+  h4{
+    margin: 0;
+  }
 	.button-container{
 		display-flex;
 		justify: space-between;
@@ -45,6 +57,9 @@ export const ProducInfo = styled.div`
     font-size: 1.4em;
     font-weight: 600;
     color: ${colors.darkBlack};
+    opacity: 80%;
+    margin-bottom: 20px;
+
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -120,13 +135,13 @@ export const AddSubstractBtn = styled.button`
   }
 `
 
-
 export const BtnCarousel = styled.div`
   width: 140%;
   height: 8%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
   &:hover {
     background-color: ${colors.lighGray};
   }
@@ -150,9 +165,28 @@ export const CarouselHorizontal = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-radius: 4px;
+
   @media (max-width: 1200px) {
     width: 100%;
     flex-direction: row;
     align-items: stretch;
   }
+`
+export const ThumbnaiProduct = styled.img`
+  width: 140%;
+  margin: 8% 0;
+  border-radius: 2px;
+  @media (max-width: 1200px) {
+    width: 13%;
+    height: 100%;
+    margin: 2% 1% 0 1%;
+  }
+  @media (max-width: 768px) {
+    height: 80%;
+  }
+`
+
+export const Pleft = styled.p`
+  text-align: left;
 `

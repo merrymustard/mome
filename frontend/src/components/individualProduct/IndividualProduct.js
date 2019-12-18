@@ -8,8 +8,7 @@ import {
   SubHeaderHighC,
   H1a,
   TemplateBtn,
-  TemplateBtnWhite,
-  ThumbnaiProduct
+  TemplateBtnWhite
 } from "../../styledComponents/StyledComps"
 
 import {
@@ -19,7 +18,9 @@ import {
   QtytyBtns,
   AddSubstractBtn,
   CarouselHorizontal,
-  BtnCarousel
+  BtnCarousel,
+  ThumbnaiProduct,
+  Pleft
 } from "./StylesSingleProd"
 
 // export const productqty = styled.div`
@@ -60,11 +61,11 @@ function IndividualProduct(props) {
             <ProducInfo>
               <SubHeaderHighC>{context.productDetail.brand}</SubHeaderHighC>
               <H1a>{context.productDetail.name}</H1a>
-              <p>{context.productDetail.description}</p>
+              <p>{context.productDetail.caption}</p>
               <p className="price-num">
                 $ {String(context.productDetail.price)}
               </p>
-              <p>Size selection</p>
+              <p>Selecciona una talla</p>
               <form
                 onSubmit={e => {
                   e.preventDefault()
@@ -148,10 +149,7 @@ function IndividualProduct(props) {
                 <br />
                 <div className="button-container">
                   <TemplateBtn type="submit">Add to cart</TemplateBtn>
-                  <TemplateBtnWhite>
-                    Add to wish list
-                    {/* <Icon.Heart size="16" /> */}
-                  </TemplateBtnWhite>
+                  <TemplateBtnWhite>Add to wish list</TemplateBtnWhite>
                 </div>
               </form>
 
@@ -159,41 +157,14 @@ function IndividualProduct(props) {
             </ProducInfo>
           </RowContainer>
           <br />
+          <br />
+          <br />
           <RowContainer>
             <SubHeaderHighC>Descripcion</SubHeaderHighC>
-            <SubHeaderHighC>Garantia</SubHeaderHighC>
-            <SubHeaderHighC>Reviews</SubHeaderHighC>
+            {/* <SubHeaderHighC>Garantia</SubHeaderHighC>
+            <SubHeaderHighC>Reviews</SubHeaderHighC> */}
           </RowContainer>
-          <RowContainer>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              in est ut magna posuere pharetra in vitae elit. Quisque non
-              faucibus lacus. In ante ex, commodo quis vulputate ac, viverra a
-              magna. Praesent eget accumsan orci. Morbi lacinia ligula id
-              tincidunt imperdiet. Phasellus hendrerit sollicitudin purus non
-              elementum. Fusce id justo dolor. Etiam quam massa, posuere vitae
-              eros eu, faucibus auctor lacus. Nam varius euismod fermentum.
-              Quisque placerat varius tortor et pellentesque. Nulla tincidunt
-              condimentum nisi eu ultricies. In convallis nisi purus, eu
-              tincidunt velit semper sed. Donec ullamcorper pellentesque mi quis
-              cursus. Duis arcu massa, accumsan sit amet turpis in, pharetra
-              pulvinar purus. In hac habitasse platea dictumst. Nulla ut
-              imperdiet metus.
-            </p>
-          </RowContainer>
-          <p>related products maybe</p>
-          <RowContainer>
-            <Carousel
-              step={context.state.carousel}
-              change={context.nextCarousel}
-              imgs={[
-                "https://randomuser.me/api/portraits/women/1.jpg",
-                "https://randomuser.me/api/portraits/men/1.jpg",
-                "https://randomuser.me/api/portraits/women/2.jpg",
-                "https://randomuser.me/api/portraits/men/2.jpg"
-              ]}
-            />
-          </RowContainer>
+          <Pleft>{context.productDetail.details}</Pleft>
         </MainWrapp>
       )}
     </MyContext.Consumer>
