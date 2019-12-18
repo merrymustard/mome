@@ -36,7 +36,7 @@ export default function SignupContainer(props) {
                   type="text"
                   name="name"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.name}
+                  value={context.state.user.name}
                 />
               </div>
               <div className="form-container">
@@ -45,7 +45,7 @@ export default function SignupContainer(props) {
                   type="text"
                   name="lastname"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.lastname}
+                  value={context.state.user.lastname}
                 />
               </div>
             </RowContainer>
@@ -58,7 +58,7 @@ export default function SignupContainer(props) {
                   name="country"
                   onChange={e => context.handleInput(e, "formSignup")}
                   // drop down con un json de paises... move it lady.
-                  value={context.formSignup.country}
+                  value={context.state.user.country}
                 />
               </div>
             </RowContainer>
@@ -70,7 +70,7 @@ export default function SignupContainer(props) {
                   type="email"
                   name="email"
                   onChange={e => context.handleInput(e, "formSignup")}
-                  value={context.formSignup.email}
+                  value={context.state.user.email}
                 />
               </div>
               <div className="form-container">

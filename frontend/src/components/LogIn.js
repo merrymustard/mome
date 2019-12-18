@@ -1,9 +1,9 @@
 // import React, { Component } from "react";
 // import styled from "styled-components";
 // import { MyContext } from "../context";
-import { Link } from "react-router-dom";
-import React, { Component } from "react";
-import { MyContext } from "../context";
+import { Link } from "react-router-dom"
+import React, { Component } from "react"
+import { MyContext } from "../context"
 import {
   SignUpTag,
   MainWrapperield,
@@ -11,12 +11,12 @@ import {
   CenterizeMe,
   RowContainer,
   H1a
-} from "../styledComponents/StyledComps";
+} from "../styledComponents/StyledComps"
 
 export default class LogIn extends Component {
   componentDidMount() {
     if (this.context.loggedUser) {
-      return this.props.history.push("/profile");
+      return this.props.history.push("/profile")
     }
   }
 
@@ -27,8 +27,8 @@ export default class LogIn extends Component {
           <SignUpTag
             onSubmit={e => {
               context.handleLogin(e, () => {
-                this.props.history.push("/profile");
-              });
+                this.props.history.push("/profile")
+              })
             }}
           >
             <MainWrapperield>
@@ -68,7 +68,7 @@ export default class LogIn extends Component {
               </CenterizeMe>
               <CenterizeMe>
                 <p>
-                  ¿Aun no tienes una cuenta? creala  
+                  ¿Aun no tienes una cuenta? creala
                   <Link to="/signup"> aquí</Link>{" "}
                 </p>
               </CenterizeMe>
@@ -76,11 +76,11 @@ export default class LogIn extends Component {
           </SignUpTag>
         )}
       </MyContext.Consumer>
-    );
+    )
   }
 }
 
-LogIn.contextType = MyContext;
+LogIn.contextType = MyContext
 
 // const LogInTag = styled.form`
 //   background-image: url("/images/oval-bg.png");

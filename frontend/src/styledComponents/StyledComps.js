@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 /////color palette
 export const colors = {
   primary: " #0f0d35",
-  // primary: " #201e45",
   secondary: "#404267",
   secondaryLight: "#e4e4ef",
   accent: "#f07b7b",
@@ -17,7 +16,7 @@ export const colors = {
   purple01: "#ABA7FF",
   pink01: "#FBB8B6",
   gold01: "#C99958"
-};
+}
 
 ////////// Typography
 
@@ -28,7 +27,7 @@ export const SubHeaderHighC = styled.h4`
   color: ${colors.midGray};
   padding: 0;
   margin: 6px 0;
-`;
+`
 
 export const H1a = styled.h1`
   font-size: 3rem;
@@ -36,7 +35,7 @@ export const H1a = styled.h1`
   padding: 0;
   margin: 0;
   color: ${colors.darkBlack};
-`;
+`
 
 export const H3a = styled.h3`
   font-weight: 400;
@@ -44,7 +43,7 @@ export const H3a = styled.h3`
   font-size: 1rem;
   padding: 0;
   margin: 0;
-`;
+`
 
 ////////// sign up form
 export const SignUpTag = styled.form`
@@ -65,7 +64,7 @@ export const SignUpTag = styled.form`
     padding-top: 50%;
     margin-bottom: 200px;
   }
-`;
+`
 
 // add product form
 export const AddProdTag = styled.form`
@@ -113,7 +112,7 @@ export const AddProdTag = styled.form`
     color: white;
     border-radius: 10px;
   }
-`;
+`
 
 ////////// Buttons
 export const MainBtn = styled.button`
@@ -134,13 +133,14 @@ export const MainBtn = styled.button`
   &:hover {
     background-color: ${colors.purple01};
 		color: ${colors.darkBlack}
-		transform: scale(1.05);   }
-`;
+		transform: scale(1.05);   
+    }
+`
 
 export const BtnTransparent = styled.button`
   background-color: transparent;
   border: none;
-`;
+`
 
 export const TemplateBtn = styled.button`
   height: 68px;
@@ -161,7 +161,7 @@ export const TemplateBtn = styled.button`
     background-color: ${colors.green01};
 		color: ${colors.darkBlack}
 		transform: scale(1.05);   }
-`;
+`
 
 export const TemplateBtnWhite = styled.button`
   height: 40px;
@@ -181,7 +181,7 @@ export const TemplateBtnWhite = styled.button`
     color: ${colors.darkBlack};
     width: 40%;
   }
-`;
+`
 
 export const AddSubstractBtn = styled.button`
   height: 40px;
@@ -199,7 +199,7 @@ export const AddSubstractBtn = styled.button`
     opacity: 70%;
     color: ${colors.darkBlack};
   }
-`;
+`
 
 export const QtytyBtns = styled.div`
   width: 0%;
@@ -217,7 +217,7 @@ export const QtytyBtns = styled.div`
     border: none;
     box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
   }
-`;
+`
 
 ///////////Radiobuttons
 export const RowContainerRadio = styled.div`
@@ -272,14 +272,14 @@ export const RowContainerRadio = styled.div`
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-`;
+`
 
 ////////// Aligment
 export const CenterizeMe = styled.div`
   display: flex;
   flex-direction: center;
   justify-content: center;
-`;
+`
 
 ////////// forms main skeleton
 export const MainWrapperield = styled.div`
@@ -321,7 +321,7 @@ export const MainWrapperield = styled.div`
       }
     }
   }
-`;
+`
 
 export const InventoryInput = styled.div`
   width: 100%;
@@ -334,7 +334,7 @@ export const InventoryInput = styled.div`
     display: flex;
     flex-direction: column;
   }
-`;
+`
 
 ////////// containers
 export const RowContainer = styled.div`
@@ -344,7 +344,7 @@ export const RowContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`;
+`
 
 //////////
 
@@ -408,7 +408,7 @@ export const ProfileTag = styled.form`
       width: 110%;
     }
   }
-`;
+`
 
 ////////// main nav
 export const NavMain = styled.nav`
@@ -438,7 +438,7 @@ export const NavMain = styled.nav`
 			}
     }
 	}
-`;
+`
 
 export const CatButton = styled.button`
   color: white;
@@ -446,7 +446,7 @@ export const CatButton = styled.button`
   border: none;
   font-size: 1em;
   padding: 0 10px;
-`;
+`
 
 ////////// SideNave
 
@@ -454,7 +454,7 @@ export const NavSide = styled.div`
   width: 300px;
   height: 100vh;
   background-color: white;
-`;
+`
 
 //////////// Products
 
@@ -484,11 +484,11 @@ export const ProductCard = styled.div`
     width: 100%;
     height: 460px;
   }
-`;
+`
 
 export const MainWrapp = styled.div`
   margin: 40px 10%;
-`;
+`
 
 export const ThumbnaiProduct = styled.img`
   width: 140%;
@@ -501,7 +501,7 @@ export const ThumbnaiProduct = styled.img`
   @media (max-width: 768px) {
     height: 80%;
   }
-`;
+`
 
 export const BtnCarousel = styled.div`
   width: 140%;
@@ -524,7 +524,7 @@ export const BtnCarousel = styled.div`
     height: 40%;
     margin-top: 5%;
   }
-`;
+`
 
 export const CarouselHorizontal = styled.div`
   box-sizing: border-box;
@@ -537,7 +537,7 @@ export const CarouselHorizontal = styled.div`
     flex-direction: row;
     align-items: stretch;
   }
-`;
+`
 
 export const ProducInfo = styled.div`
   width: 44%;
@@ -557,12 +557,12 @@ export const ProducInfo = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-`;
+`
 
 export const FeedWrapper = styled.div`
   width: 100%;
   display: flex;
-`;
+`
 
 export const FitlerCard = styled.div`
   width: 30%;
@@ -579,7 +579,7 @@ export const FitlerCard = styled.div`
   @media (max-width: 768px) {
     margin-right: 0;
   }
-`;
+`
 
 ///////// thumbnails products
 export const CardProdWrap = styled.div`
@@ -596,7 +596,7 @@ export const CardProdWrap = styled.div`
   a {
     color: ${colors.purple01};
   }
-`;
+`
 ////////// IMAGE CONTAINER WITH HEART
 export const Prodimg = styled.div`
   box-sizing: border-box;
@@ -610,7 +610,7 @@ export const Prodimg = styled.div`
     color: pink;
     position: relative;
   }
-`;
+`
 
 ////////// filter
 export const FeedContainer = styled.div`
@@ -619,7 +619,7 @@ export const FeedContainer = styled.div`
   flex-wrap: wrap;
   text-align: left;
   position: relative;
-`;
+`
 
 export const SizeContainer = styled.div`
   display: flex;
@@ -639,7 +639,7 @@ export const SizeContainer = styled.div`
       background-color: ${colors.darkBlack};
     }
   }
-`;
+`
 
 export const FilterSections = styled.div`
   display: flex;
@@ -652,7 +652,7 @@ export const FilterSections = styled.div`
   input {
     color: white;
   }
-`;
+`
 
 export const FilterSectionsVertical = styled.div`
   display: flex;
@@ -664,4 +664,4 @@ export const FilterSectionsVertical = styled.div`
   input {
     color: white;
   }
-`;
+`

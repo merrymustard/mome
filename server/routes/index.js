@@ -1,12 +1,22 @@
-const router = require('express').Router();
-const {addProduct, deleteProduct, getProducts, productDetail, createOrder, deleteProductFromWishlist, addProductToWishList} = require("../controllers/productsControllers")
+const router = require("express").Router()
+const uploadCloud = require("../config/cloudinary")
 
-router.get('/', (req, res, next) => {
-  res.status(200).json({ msg: 'Working' });
-});
+const {
+  addProduct,
+  deleteProduct,
+  getProducts,
+  productDetail,
+  createOrder,
+  deleteProductFromWishlist,
+  addProductToWishList,
+  uploadImage
+} = require("../controllers/productsControllers")
 
-router.post("/addproduct", addProduct)
-module.exports = router;
+router.get("/", (req, res, next) => {
+  res.status(200).json({ msg: "Working" })
+})
+
+router.post("/addproduct", uploadCloud.array("images"), addProduct)
 router.post("/delete-product-from-wishlist", deleteProductFromWishlist)
 router.post("/add-product-to-wishlist", addProductToWishList)
 
@@ -14,3 +24,6 @@ router.get("/delete-product", deleteProduct)
 router.get("/products", getProducts)
 router.post("/product-detail", productDetail)
 router.post("/new-order", createOrder)
+router.post("/upload", uploadCloud.single("photo"), uploadImage)
+
+module.exports = router
