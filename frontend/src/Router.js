@@ -7,6 +7,7 @@ import Profile from "./components/Profile";
 import AddProducts from "./components/AddProducts";
 import NotFound from "./components/404/NotFound.js";
 import NavBar from "./components/NavBar";
+import createOrder from "./components/createOrder"
 import IndividualProduct from "./components/individualProduct/IndividualProduct";
 import ProductFeed from "./components/feed/ProductFeed";
 
@@ -19,6 +20,7 @@ const Router = () => (
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/addproduct" component={AddProducts} />
+      <Route exact path = "/order" component = {createOrder}/>
       {/* //Add actual product id route */}
       <Route exact path="/detail" component={IndividualProduct} />
       {/* // product feed related to categories  */}

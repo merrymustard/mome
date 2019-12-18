@@ -47,7 +47,8 @@ class MyProvider extends Component {
     Cart: [],
     carousel: 0,
     wishListProds: [],
-    totalValueCart: 0
+    totalValueCart: 0,
+    quantity: 0
   }
 
   componentDidMount() {
@@ -126,24 +127,33 @@ class MyProvider extends Component {
     })
   }
   handleProductQty = a => {
-    console.log(this.state.newCartProduct.quantity)
     let x = this.state.newCartProduct.quantity
     if (a) {
       x++
-      console.log("hey")
       this.setState({
         newCartProduct: { ...this.state.newCartProduct, quantity: x }
       })
     }
     if (!a) {
       x--
-      console.log("ho")
       this.setState({
         newCartProduct: { ...this.state.newCartProduct, quantity: x }
       })
     }
-    console.log(x)
-    console.log(this.state.newCartProduct)
+  }
+  handleProductQtyOrder = (e, a) => {
+    let x = this.state.Cart[e].quantity
+    const carrito = this.state.Cart
+    if (a) {
+      x++
+      carrito[e].quantity = x
+      this.setState({ Cart: carrito })
+    }
+    if (!a) {
+      x--
+      carrito[e].quantity = x
+      this.setState({ Cart: carrito })
+    }
   }
 
   addProduct = async e => {
@@ -154,7 +164,7 @@ class MyProvider extends Component {
       formData.append(key, newProduct[key])
     }
     for (const llave of Object.keys(newProduct.images)) {
-      formData.append('images', newProduct.images[llave])
+      formData.append("images", newProduct.images[llave])
     }
     const { data } = await MY_SERVICE.addproduct(formData)
     console.log(data)
@@ -260,13 +270,10 @@ class MyProvider extends Component {
     const productId = "5df017ed70fca855aae1cded"
     const cart = this.state.Cart
     const { data } = await MY_SERVICE.productDetail(productId)
-    console.log(data)
-    console.log(this.state.newCartProduct)
     data.product.quantity = this.state.newCartProduct.quantity
     data.product.size = this.state.newCartProduct.size
     cart.push(data.product)
     this.setState({ Cart: cart })
-    console.log(this.state.Cart)
     const reducer = (accumulator, currentValue) => accumulator + currentValue
     const productsArray = this.state.Cart.map(e => ({
       prod: { product: e.id, quantity: e.quantity }
@@ -278,14 +285,19 @@ class MyProvider extends Component {
   }
   // CONFIRMACIÓN DE LA ORDEN
   submitOrder = async () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue
-    const productsArray = this.state.Cart.map(e => ({
-      prod: { product: e.id, quantity: e.quantity }
+    // const reducer = (accumulator, currentValue) => accumulator + currentValue
+    // const productsArray = this.state.Cart.map(e => ({
+    //   prod: { product: e.id, quantity: e.quantity }
+    // }))
+    // const totalValue = productsArray
+    //   .map(e => e.quantity * e.price)
+    //   .reduce(reducer)
+    const SendCart = this.state.Cart.map((e, i) => ({
+      product: e._id,
+      quantity: e.quantity,
+      size: e.size
     }))
-    const totalValue = productsArray
-      .map(e => e.quantity * e.price)
-      .reduce(reducer)
-    const newOrd = { products: productsArray, total: totalValue }
+    const newOrd = { products: SendCart, total: this.state.totalValue }
     const { data } = await MY_SERVICE.createOrder(newOrd)
     this.setState({ createdOrder: data.newOrder })
   }
@@ -303,6 +315,10 @@ class MyProvider extends Component {
       }
       return this.setState({ carousel: carousel + 1 })
     }
+  }
+  // individual product
+  showSettings(event) {
+    event.preventDefault()
   }
 
   render() {
@@ -346,7 +362,9 @@ class MyProvider extends Component {
           handleSize: this.handleSize,
           totalValueCart: this.totalValueCart,
           handleFile: this.handleFile,
-          handleUpload: this.handleUpload
+          handleUpload: this.handleUpload,
+          handleProductQtyOrder: this.handleProductQtyOrder,
+          quantity: this.state.quantity
           // user: this.state.user,
         }}
       >

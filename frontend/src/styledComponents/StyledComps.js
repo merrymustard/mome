@@ -183,41 +183,41 @@ export const TemplateBtnWhite = styled.button`
   }
 `
 
-export const AddSubstractBtn = styled.button`
-  height: 40px;
-  width: 50px;
-  padding: 0 14px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: ${colors.purple01};
-  color: black;
-  border-radius: 2px;
-  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-  &:hover {
-    background-color: ${colors.purple01};
-    opacity: 70%;
-    color: ${colors.darkBlack};
-  }
-`
+// export const AddSubstractBtn = styled.button`
+//   height: 40px;
+//   width: 50px;
+//   padding: 0 14px;
+//   border: none;
+//   font-size: 1rem;
+//   font-weight: 600;
+//   background-color: ${colors.purple01};
+//   color: black;
+//   border-radius: 2px;
+//   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
+//   &:hover {
+//     background-color: ${colors.purple01};
+//     opacity: 70%;
+//     color: ${colors.darkBlack};
+//   }
+// `
 
-export const QtytyBtns = styled.div`
-  width: 0%;
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  border: none;
-  margin: 20px 0;
+// export const QtytyBtns = styled.div`
+//   width: 0%;
+//   display: flex;
+//   justify-content: space-between;
+//   height: 40px;
+//   border: none;
+//   margin: 20px 0;
 
-  .quantity {
-    font-size: 1.6rem;
-    padding-left: 16px;
-    width: 60px;
-    align-text: right;
-    border: none;
-    box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-  }
-`
+//   .quantity {
+//     font-size: 1.6rem;
+//     padding-left: 16px;
+//     width: 60px;
+//     align-text: right;
+//     border: none;
+//     box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
+//   }
+// `
 
 ///////////Radiobuttons
 export const RowContainerRadio = styled.div`
@@ -458,34 +458,6 @@ export const NavSide = styled.div`
 
 //////////// Products
 
-export const ProductCard = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 60%;
-  height: 60%;
-  background-color: transparent;
-  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  img[alt="main"] {
-    width: 84%;
-    height: 84%;
-  }
-  @media (max-width: 1200px) {
-    width: 50%;
-    height: 100%;
-    flex-direction: column-reverse;
-    img[alt="main"] {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 460px;
-  }
-`
-
 export const MainWrapp = styled.div`
   margin: 40px 10%;
 `
@@ -539,107 +511,92 @@ export const CarouselHorizontal = styled.div`
   }
 `
 
-export const ProducInfo = styled.div`
-  width: 44%;
-  text-align: left;
-  padding: 4%;
-  display: flex;
-  flex-direction: column;
-	.button-container{
-		display-flex;
-		justify: space-between;
-	}
-  .price-num {
-    font-size: 1.4em;
-    font-weight: 600;
-    color: ${colors.darkBlack};
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`
+// export const ProducInfo = styled.div`
+//   width: 44%;
+//   text-align: left;
+//   padding: 4%;
+//   display: flex;
+//   flex-direction: column;
+// 	.button-container{
+// 		display-flex;
+// 		justify: space-between;
+// 	}
+//   .price-num {
+//     font-size: 1.4em;
+//     font-weight: 600;
+//     color: ${colors.darkBlack};
+//   }
+//   @media (max-width: 768px) {
+//     width: 100%;
+//   }
+// `
 
-export const FeedWrapper = styled.div`
-  width: 100%;
-  display: flex;
-`
+// export const FeedWrapper = styled.div`
+//   width: 100%;
+//   display: flex;
+// `
 
-export const FitlerCard = styled.div`
-  width: 30%;
-  height: 100%;
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-direction: column;
-  background-color: ${colors.midGray2};
-  border-radius: 4px;
-  margin-right: 30px;
-  color: white;
-  text-align: left;
-  @media (max-width: 768px) {
-    margin-right: 0;
-  }
-`
+// export const FitlerCard = styled.div`
+//   width: 30%;
+//   height: 100%;
+//   display: flex;
+//   padding: 20px;
+//   box-sizing: border-box;
+//   flex-direction: column;
+//   background-color: ${colors.midGray2};
+//   border-radius: 4px;
+//   margin-right: 30px;
+//   color: white;
+//   text-align: left;
+//   @media (max-width: 768px) {
+//     margin-right: 0;
+//   }
+// `
 
-///////// thumbnails products
-export const CardProdWrap = styled.div`
-  box-sizing: border-box;
-  width: 300px;
-  height: auto;
-  color: black;
-  border-radius: 4px;
-  padding: 8px 0;
-  margin: 0 40px 20px 0;
-  small {
-    margin: 20px 0;
-  }
-  a {
-    color: ${colors.purple01};
-  }
-`
-////////// IMAGE CONTAINER WITH HEART
-export const Prodimg = styled.div`
-  box-sizing: border-box;
-  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-  img {
-    width: 100%;
-    position: relative;
-  }
-  .Heart:hover {
-    color: pink;
-    position: relative;
-  }
-`
+// ////////// IMAGE CONTAINER WITH HEART
+// export const Prodimg = styled.div`
+//   box-sizing: border-box;
+//   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
+//   margin-bottom: 20px;
+//   z-index: -10;
+//   img {
+//     width: 100%;
+//     position: relative;
+//   }
+//   .Heart:hover {
+//     color: pink;
+//     position: relative;
+//   }
+// `
 
-////////// filter
-export const FeedContainer = styled.div`
-  display: flex;
-  flex-direction: flex-start;
-  flex-wrap: wrap;
-  text-align: left;
-  position: relative;
-`
+// ////////// filter
+// export const FeedContainer = styled.div`
+//   display: flex;
+//   flex-direction: flex-start;
+//   flex-wrap: wrap;
+//   text-align: left;
+//   position: relative;
+// `
 
-export const SizeContainer = styled.div`
-  display: flex;
-  flex-direction: start;
-  button {
-    border: solid 1px ${colors.midGray};
-    color: ${colors.midGray};
-    background-color: transparent;
-    padding: 8px 16px;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    margin-right: 10px;
-    &:hover 
-      background-color: ${colors.gold01};
-    }
-    &:selected {
-      background-color: ${colors.darkBlack};
-    }
-  }
-`
+// export const SizeContainer = styled.div`
+//   display: flex;
+//   flex-direction: start;
+//   button {
+//     border: solid 1px ${colors.midGray};
+//     color: ${colors.midGray};
+//     background-color: transparent;
+//     padding: 8px 16px;
+//     font-size: 1.2rem;
+//     border-radius: 4px;
+//     margin-right: 10px;
+//     &:hover
+//       background-color: ${colors.gold01};
+//     }
+//     &:selected {
+//       background-color: ${colors.darkBlack};
+//     }
+//   }
+// `
 
 export const FilterSections = styled.div`
   display: flex;

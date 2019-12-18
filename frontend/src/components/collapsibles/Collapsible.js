@@ -1,67 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import { MyContext } from "../../context";
-import { Link } from "react-router-dom";
-import { colors, TemplateBtn } from "../../styledComponents/StyledComps";
-
-const StyledCollapsible = styled.section`
-  padding: 20px;
-  position: relative;
-  background: white;
-  ${"" /* position: fixed; */}
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100vh;
-  min-width: 400px;
-  bottom: 0;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  /* esto es la magia */
-  z-index: 200;
-  transform: translateX(100%);
-  transition: all 0.3s;
-  ${props => props.open && `transform: translateX(0);`};
-`;
-const StyledItem = styled.div``;
-
-const RenderItem = (item, route) => {
-  return (
-    <StyleLink to={item}>
-      <StyledItem>{item}</StyledItem>
-    </StyleLink>
-  );
-};
+import React from "react"
+import styled from "styled-components"
+import { MyContext } from "../../context"
+import { Link } from "react-router-dom"
+import { withRouter } from "react-router-dom"
+import {
+  CloseBtn,
+  SlideMenuProf,
+  StyledCollapsible,
+  SlideCart
+} from "./StylesCollapsable"
+import { colors, TemplateBtn } from "../../styledComponents/StyledComps"
 
 const StyleLink = styled(Link)`
   color: ${colors.darkBlack};
   text-decoration: none;
   padding: 20px;
   font-size: 1.4rem;
-`;
+`
 
-const SlideMenuProf = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export default function Collapsible(props) {
+function Collapsible(props) {
   return (
     <MyContext.Consumer>
       {context => (
         <StyledCollapsible open={props.open}>
-          <button onClick={context.toggleMenu}>X</button>
+          <CloseBtn onClick={context.toggleMenu}>
+            <i class="fas fa-times fa-md"></i>
+          </CloseBtn>
           {props.navbar.user ? (
             <SlideMenuProf>
-              <StyleLink to="/profile">Profile</StyleLink>
-              <StyleLink to="/orders">My Orders</StyleLink>
-              <StyleLink to="/profile-address">Adresses</StyleLink>
-              <TemplateBtn onClick={context.handleLogout}>Logout</TemplateBtn>
+              <StyleLink to="/profile">Información Personal</StyleLink>
+              <StyleLink to="/orders">Mis Ordenes</StyleLink>
+              <StyleLink to="/profile-address">Direcciones</StyleLink>
+              <TemplateBtn onClick={context.handleLogout}>
+                Cerrar Sesión
+              </TemplateBtn>
             </SlideMenuProf>
           ) : props.navbar.heart ? (
             <>
@@ -74,18 +46,22 @@ export default function Collapsible(props) {
             </>
           ) : props.navbar.shoppingcart ? (
             <>
-              <h2>Your Cart</h2>
+              <h2>Carrito</h2>
               <div className="cart-products">
-                {context.Cart.map(e => (
-                  <>
-                    <p>{e.name}</p>
-                    <p>
-                      {e.size} : {e.quantity}
-                    </p>
-                    <p>price: {e.price}</p>
-                  </>
-                ))}
-                <button onClick={context.submitOrder}>Submit Order</button>
+                <SlideCart>
+                  {context.Cart.map(e => (
+                    <>
+                      <p>{e.name}</p>
+                      <p>
+                        {e.size} : {e.quantity}
+                      </p>
+                      <p>price: {e.price}</p>
+                    </>
+                  ))}
+                </SlideCart>
+                <button onClick={() => props.history.push("/order")}>
+                  Submit Order
+                </button>
                 <p>Total: {context.totalValueCart}</p>
               </div>
             </>
@@ -93,8 +69,9 @@ export default function Collapsible(props) {
         </StyledCollapsible>
       )}
     </MyContext.Consumer>
-  );
+  )
 }
+export default withRouter(Collapsible)
 {
   /* {if {}}
           {items.map((item, idx) => (

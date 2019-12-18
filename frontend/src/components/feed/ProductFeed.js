@@ -1,23 +1,21 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 // import { Link } from "react-router-dom";
-import {
-  MainWrapp,
-  FeedWrapper,
-  FeedContainer
-} from "../../styledComponents/StyledComps";
-import FilterBox from "./FilterBox";
-import ProductCard from "./ProductCard";
-import { MyContext } from "../../context";
+import { MainWrapp } from "../../styledComponents/StyledComps"
+import { FeedWrapper, FeedContainer } from "./StylesFeed"
+
+import FilterBox from "./FilterBox"
+import ProductCard from "./ProductCard"
+import { MyContext } from "../../context"
 
 export default class ProductFeed extends Component {
   state = {
     feed: []
-  };
+  }
   showSettings(event) {
-    event.preventDefault();
+    event.preventDefault()
   }
   componentDidMount() {
-    this.context.getProducts();
+    this.context.getProducts()
   }
 
   render() {
@@ -36,7 +34,7 @@ export default class ProductFeed extends Component {
           </MainWrapp>
         )}
       </MyContext.Consumer>
-    );
+    )
   }
 }
-ProductFeed.contextType = MyContext;
+ProductFeed.contextType = MyContext

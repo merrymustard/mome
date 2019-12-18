@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 import {
-  FitlerCard,
   SubHeaderHighC,
   FilterSections,
   FilterSectionsVertical
-} from "../../styledComponents/StyledComps";
-import Checkbox from "./Checkbox";
-import { MyContext } from "../../context";
+} from "../../styledComponents/StyledComps"
+import { FitlerCard } from "./StylesFeed"
+import Checkbox from "./Checkbox"
+import { MyContext } from "../../context"
 
 export default class FilterBox extends Component {
   showSettings(event) {
-    event.preventDefault();
+    event.preventDefault()
   }
   render() {
     return (
@@ -36,7 +36,7 @@ export default class FilterBox extends Component {
                 <input type="checkbox" name="men" value="Hombre" />
                 <label>Brand</label>
               </div>
-							<div>
+              <div>
                 <input type="checkbox" name="men" value="Hombre" />
                 <label>Brand</label>
               </div>
@@ -71,6 +71,6 @@ export default class FilterBox extends Component {
           </FitlerCard>
         )}
       </MyContext.Consumer>
-    );
+    )
   }
 }

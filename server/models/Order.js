@@ -2,16 +2,17 @@ const {	model, Schema } = require('mongoose');
 
 const orderSchema = new Schema({
 	products: [{
-    prod: {
-    product:
-    {
+    product:{
       type: Schema.Types.ObjectId,
       ref: 'Product'
     },
     quantity:{
       type: Number
+    },
+    size:{
+      type:Number
     }
-  }}],
+  }],
 	total: Number
 }, {
   timestamps: true
