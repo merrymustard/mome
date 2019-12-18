@@ -47,27 +47,24 @@ function IndividualProduct(props) {
                 <BtnCarousel>
                   <Icon.ChevronUp size="30" />
                 </BtnCarousel>
-                <ThumbnaiProduct src="/images/sweat3.png" alt="name" />
-                <ThumbnaiProduct src="/images/sweat1.png" alt="name" />
-                <ThumbnaiProduct src="/images/sweat2.png" alt="name" />
-                <ThumbnaiProduct src="/images/sweat4.png" alt="name" />
-                <ThumbnaiProduct src="/images/sweat5.png" alt="name" />
+              
+                {context.productDetail.images.map((e, i) => 
+                  <ThumbnaiProduct src={e} alt="photito" />
+                )}
                 <BtnCarousel>
                   <Icon.ChevronDown size="30" />
                 </BtnCarousel>
               </CarouselHorizontal>
 
-              <img src="/images/sweat3.png" alt="main" />
+              <img src={context.productDetail.images[0]} alt="main" />
             </ProductCard>
             <ProducInfo>
-              <SubHeaderHighC>Brand Name</SubHeaderHighC>
-              <H1a>Name</H1a>
-              <p>
-                Duis arcu massa, accumsan sit amet turpis in, pharetra pulvinar
-                purus.
+              <SubHeaderHighC>{context.productDetail.brand}</SubHeaderHighC>
+              <H1a>{context.productDetail.name}</H1a>
+              <p>{context.productDetail.description}</p>
+              <p className="price-num">
+                $ {String(context.productDetail.price)}
               </p>
-              <p className="price-num">$3000</p>
-              {/* <p className="price-num">$ {props.product.price}</p> */}
               <p>Size selection</p>
               <form
                 onSubmit={e => {

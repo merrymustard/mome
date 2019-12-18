@@ -27,7 +27,9 @@ export default class ProductFeed extends Component {
               <FilterBox />
               <FeedContainer>
                 {context.productFeed.map(e => (
-                  <ProductCard product={e} />
+                <div onClick = {event=> {context.getProductDetail(e._id, ()=> this.props.history.push("/detail"))}}>
+                  <ProductCard product = {e}/>
+                </div>
                 ))}
               </FeedContainer>
             </FeedWrapper>

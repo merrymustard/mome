@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { SubHeaderHighC, H3a } from "../../styledComponents/StyledComps"
 import { CardProdWrap, Prodimg } from "./StylesFeed"
 
-function ProductCard(props) {
+export default function ProductCard(props){
   return (
     <MyContext.Consumer>
       {context => (
@@ -45,4 +45,4 @@ function ProductCard(props) {
     </MyContext.Consumer>
   )
 }
-export default ProductCard
+

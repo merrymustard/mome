@@ -7,7 +7,9 @@ import {
   CloseBtn,
   SlideMenuProf,
   StyledCollapsible,
-  SlideCart
+  SlideCart,
+  ProductCart,
+  ProdInfoSideCart
 } from "./StylesCollapsable"
 import { colors, TemplateBtn } from "../../styledComponents/StyledComps"
 
@@ -47,23 +49,27 @@ function Collapsible(props) {
           ) : props.navbar.shoppingcart ? (
             <>
               <h2>Carrito</h2>
-              <div className="cart-products">
+              <ProductCart>
                 <SlideCart>
                   {context.Cart.map(e => (
-                    <>
-                      <p>{e.name}</p>
-                      <p>
-                        {e.size} : {e.quantity}
-                      </p>
-                      <p>price: {e.price}</p>
-                    </>
+                    <ProdInfoSideCart>
+                      <img src ={e.images[1]} alt="patatas"/>
+                      <div>
+                        <p>{e.name}</p>
+                        <p>
+                          {e.size} : {e.quantity}
+                        </p>
+                      </div>
+                      <small>price: {e.price}</small>
+                    </ProdInfoSideCart>
                   ))}
                 </SlideCart>
                 <button onClick={() => props.history.push("/order")}>
                   Submit Order
                 </button>
                 <p>Total: {context.totalValueCart}</p>
-              </div>
+              </ProductCart>
+              >
             </>
           ) : null}
         </StyledCollapsible>

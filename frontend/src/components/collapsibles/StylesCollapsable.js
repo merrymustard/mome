@@ -50,7 +50,7 @@ export const StyledCollapsible = styled.section`
   transition: all 0.3s;
   ${props => props.open && `transform: translateX(0);`};
   h2 {
-    margin: -38px 0 0 0;
+    margin: -38px 0 20px 0;
     font-weight: 300;
     z-index: -10;
   }
@@ -59,7 +59,31 @@ export const StyledCollapsible = styled.section`
 export const SlideCart = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 80vh;
+  width: 80%;
+  align-content: center;
+  .photodummy {
+    width: 70px;
+    height: 70px;
+    background-color: gray;
+  }
+`
+export const ProdInfoSideCart = styled.div`
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 4px;
+  }
+`
+
+export const ProductCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `

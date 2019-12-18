@@ -35,14 +35,16 @@ class MyProvider extends Component {
       size: [],
       quantity: [],
       details: "",
-      images: "",
+      images: [],
       category: "",
       subcategory: ""
     },
     file: {},
     productFeed: [],
     checked: false,
-    productDetail: {},
+    productDetail: {
+      images: []
+    },
     open: false,
     Cart: [],
     carousel: 0,
@@ -262,8 +264,11 @@ class MyProvider extends Component {
   }
   getProductDetail = async (e, cb) => {
     // LA CARD DEL PRODUCTO TIENE QUE TENER EL ONCLICK CON ESTA FUNCIÓN Y TIENE QUE TENER EL ID CON EL ID DEL PRODUCTO EN CUESTIÓN
-    const { data } = await MY_SERVICE.productDetail("5df017ed70fca855aae1cded")
-    this.setState({ productDetail: data.product })
+    const { data } = await MY_SERVICE.productDetail(e)
+    console.log(data.product)
+    await this.setState({ productDetail: data.product })
+    console.log(this.state.productDetail)
+    cb()
   }
   // ESTA BELLEZZA VA EN EL SUBMIT BUTTON DE ADD TO CART, EN LOS INPUTS DE LOS PRODUCTOS TIENE QUE IR EL HANDLEINPUT RECIBIENDO COMO SEGUNDO PARAMETRO "newCartProduct" PARA QUE LO AÑADA A ESE FORM
   addProductToCart = async () => {
