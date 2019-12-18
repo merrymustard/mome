@@ -2,7 +2,6 @@ import React from "react"
 import { MyContext } from "../../context"
 import Carousel from "./Carousel"
 import * as Icon from "react-feather"
-import styled from "styled-components"
 import {
   MainWrapp,
   RowContainer,
@@ -10,9 +9,7 @@ import {
   H1a,
   TemplateBtn,
   TemplateBtnWhite,
-  ThumbnaiProduct,
-  CarouselHorizontal,
-  BtnCarousel
+  ThumbnaiProduct
 } from "../../styledComponents/StyledComps"
 
 import {
@@ -20,7 +17,9 @@ import {
   ProducInfo,
   SizeContainer,
   QtytyBtns,
-  AddSubstractBtn
+  AddSubstractBtn,
+  CarouselHorizontal,
+  BtnCarousel
 } from "./StylesSingleProd"
 
 // export const productqty = styled.div`
@@ -47,10 +46,10 @@ function IndividualProduct(props) {
                 <BtnCarousel>
                   <Icon.ChevronUp size="30" />
                 </BtnCarousel>
-              
-                {context.productDetail.images.map((e, i) => 
+
+                {context.productDetail.images.map((e, i) => (
                   <ThumbnaiProduct src={e} alt="photito" />
-                )}
+                ))}
                 <BtnCarousel>
                   <Icon.ChevronDown size="30" />
                 </BtnCarousel>

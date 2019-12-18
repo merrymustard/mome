@@ -119,3 +119,40 @@ export const AddSubstractBtn = styled.button`
     color: ${colors.darkBlack};
   }
 `
+
+
+export const BtnCarousel = styled.div`
+  width: 140%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: ${colors.lighGray};
+  }
+  @media (max-width: 1200px) {
+    width: 200%;
+    height: 140%;
+    margin-top: 5%;
+    transform: rotate(-90deg);
+    align-items: stretch;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 40%;
+    margin-top: 5%;
+  }
+`
+
+export const CarouselHorizontal = styled.div`
+  box-sizing: border-box;
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+  }
+`

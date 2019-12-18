@@ -7,7 +7,7 @@ export const FeedWrapper = styled.div`
 `
 
 export const FitlerCard = styled.div`
-  width: 400px;
+  width: 300px;
   height: 100%;
   display: flex;
   padding: 20px;
@@ -38,8 +38,10 @@ export const CardProdWrap = styled.div`
   height: auto;
   color: black;
   border-radius: 4px;
-  padding: 8px 0;
-  margin: 0 20px 20px 0;
+  padding: 0;
+  margin: 0 18px;
+  box-sizing: border-box;
+
   small {
     margin: 20px 0;
   }
@@ -51,15 +53,16 @@ export const CardProdWrap = styled.div`
 ////////// IMAGE CONTAINER WITH HEART
 export const Prodimg = styled.div`
   box-sizing: border-box;
-  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.24);
   margin-bottom: 20px;
-  z-index: -10;
+  height: 265px;
+  z-index: -100;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
   img {
     width: 100%;
-    position: relative;
-  }
-  .Heart:hover {
-    color: pink;
     position: relative;
   }
 `

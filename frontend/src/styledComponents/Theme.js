@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   width: 100vw;
@@ -8,11 +8,11 @@ const GlobalStyles = createGlobalStyle`
 	}
 	body{
 		padding-top: 80px;
-		background-color: #EAEBEF;
+		background-color:" #FAF8F5";
 		@media (max-width: 768px) {
 			margin-top: 100px;
       }
 	}
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

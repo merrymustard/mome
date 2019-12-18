@@ -1,18 +1,22 @@
 import React from "react"
 import { MyContext } from "../../context"
 import { Link } from "react-router-dom"
-import { SubHeaderHighC, H3a } from "../../styledComponents/StyledComps"
+import {
+  SubHeaderHighC,
+  H3a,
+  StyleLink
+} from "../../styledComponents/StyledComps"
 import { CardProdWrap, Prodimg } from "./StylesFeed"
 
-export default function ProductCard(props){
+export default function ProductCard(props) {
   return (
     <MyContext.Consumer>
       {context => (
-        <Link to="/detail">
+        <StyleLink to="/detail">
           <CardProdWrap>
             {/* id={props.product._id} onClick = {e => context.getProductDetail(e,()=>{props.history.push("/detail")})} */}
             <Prodimg>
-              <img src="/images/sweat3.png" alt="mainphoto" />
+              <img src={props.product.images[0]} alt="mainphoto" />
             </Prodimg>
             <SubHeaderHighC>{props.product.brand}</SubHeaderHighC>
             <H3a>{props.product.name}</H3a>
@@ -40,9 +44,8 @@ export default function ProductCard(props){
               ) : null}
             </div>
           </CardProdWrap>
-        </Link>
+        </StyleLink>
       )}
     </MyContext.Consumer>
   )
 }
-

@@ -18,6 +18,15 @@ export const colors = {
   gold01: "#C99958"
 }
 
+///////// Links
+export const StyleLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+`
+
 ////////// Typography
 
 export const SubHeaderHighC = styled.h4`
@@ -30,7 +39,7 @@ export const SubHeaderHighC = styled.h4`
 `
 
 export const H1a = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 200;
   padding: 0;
   margin: 0;
@@ -440,13 +449,13 @@ export const NavMain = styled.nav`
 	}
 `
 
-export const CatButton = styled.button`
-  color: white;
-  background-color: transparent;
-  border: none;
-  font-size: 1em;
-  padding: 0 10px;
-`
+// export const CatButton = styled.button`
+//   color: white;
+//   background-color: transparent;
+//   border: none;
+//   font-size: 1em;
+//   padding: 0 10px;
+// `
 
 ////////// SideNave
 
@@ -475,41 +484,41 @@ export const ThumbnaiProduct = styled.img`
   }
 `
 
-export const BtnCarousel = styled.div`
-  width: 140%;
-  height: 8%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    background-color: ${colors.lighGray};
-  }
-  @media (max-width: 1200px) {
-    width: 200%;
-    height: 140%;
-    margin-top: 5%;
-    transform: rotate(-90deg);
-    align-items: stretch;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 40%;
-    margin-top: 5%;
-  }
-`
+// export const BtnCarousel = styled.div`
+//   width: 140%;
+//   height: 8%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   &:hover {
+//     background-color: ${colors.lighGray};
+//   }
+//   @media (max-width: 1200px) {
+//     width: 200%;
+//     height: 140%;
+//     margin-top: 5%;
+//     transform: rotate(-90deg);
+//     align-items: stretch;
+//   }
+//   @media (max-width: 768px) {
+//     width: 100%;
+//     height: 40%;
+//     margin-top: 5%;
+//   }
+// `
 
-export const CarouselHorizontal = styled.div`
-  box-sizing: border-box;
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media (max-width: 1200px) {
-    width: 100%;
-    flex-direction: row;
-    align-items: stretch;
-  }
-`
+// export const CarouselHorizontal = styled.div`
+//   box-sizing: border-box;
+//   width: 10%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   @media (max-width: 1200px) {
+//     width: 100%;
+//     flex-direction: row;
+//     align-items: stretch;
+//   }
+// `
 
 // export const ProducInfo = styled.div`
 //   width: 44%;
