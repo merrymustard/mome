@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-gesture-gallery": "^1.1.0",
+    "react-gesture-responder": "^2.1.0"
+  }
+}

@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import CarouselHome from "./HomeCarousel"
 
 const HomeTag = styled.div`
   background-image: url("/images/oval-bg.png");
@@ -15,17 +16,17 @@ const HomeTag = styled.div`
   flex-direction: row;
   p {
     font-size: 1.2rem;
-    color:#97989a;
+    color: #97989a;
   }
   h1 {
-      font-size: 3rem;
-      color:#628165;
+    font-size: 3rem;
+    color: #628165;
   }
   .duo-div {
     width: 36%;
   }
   .duo-div p {
-    font-size:1.7rem;
+    font-size: 1.7rem;
   }
   .duo-div:last-of-type {
     padding-left: 30%;
@@ -50,19 +51,18 @@ const HomeTag = styled.div`
       margin: 0;
     }
   }
-  button{
-    width:80%;
+  button {
+    width: 80%;
     padding: 10px 30px;
-    margin:10px auto;
-    text-alignment:center;
-    background-color:#c0e3be;
-    font-size:1rem;
-    font-weight:bolder;
-
+    margin: 10px auto;
+    text-alignment: center;
+    background-color: #c0e3be;
+    font-size: 1rem;
+    font-weight: bolder;
   }
-  .btn-container{
-    width:100%;
-    margin:100px 30px;
+  .btn-container {
+    width: 100%;
+    margin: 100px 30px;
   }
   .form-container {
     display: flex;
@@ -78,15 +78,19 @@ const HomeTag = styled.div`
       width: 110%;
     }
   }
-`;
+`
 export default class Home extends Component {
   render() {
     return (
       <HomeTag>
-        <div className="duo-div">
+        <CarouselHome />
+        {/* <div className="duo-div">
           <div>
             <h1>IronProfile</h1>
-            <p>Today we will create an app with authorization, adding some cool styles </p>
+            <p>
+              Today we will create an app with authorization, adding some cool
+              styles{" "}
+            </p>
           </div>
           <div className="btn-container">
             <Link to="/signup">
@@ -97,10 +101,8 @@ export default class Home extends Component {
             </Link>
           </div>
         </div>
-        <div className="duo-div">
-
-        </div>
+        <div className="duo-div"></div> */}
       </HomeTag>
-    );
+    )
   }
 }
