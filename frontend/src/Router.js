@@ -30,8 +30,8 @@ const Router = () => (
       <Route exact path="/info" component={Profile} />
       <Route exact path="/orden" component={Home} />
       <Route exact path="/address" component={AddProducts} />
-      <Route exact path="/men" component={CatMen} />
-      <Route exact path="/women" component={CatWomen} />
+      <Route exact path="/man" component={CatMen} />
+      <Route exact path="/woman" component={CatWomen} />
 
       <Route component={NotFound} />
     </Switch>

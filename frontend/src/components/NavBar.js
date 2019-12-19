@@ -63,10 +63,10 @@ class NavBar extends Component {
               <StyleLink to="/">
                 <h1 className="logo redUnder">MoMe</h1>
               </StyleLink>
-              <StyleLink to="/men">
+              <StyleLink to="/man">
                 <CatButton>Hombres</CatButton>
               </StyleLink>
-              <StyleLink to="/women">
+              <StyleLink to="/woman">
                 <CatButton>Mujeres</CatButton>
               </StyleLink>
               <StyleLink to="/feed">

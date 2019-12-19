@@ -56,13 +56,22 @@ exports.getProducts = async (req, res) => {
   const products = await Product.find()
   res.status(200).json({ products })
 }
-
+exports.getMan = async(_, res) =>{
+  const cosa = "Hombre"
+  const products = await Product.find({category:cosa})
+  console.log(products)
+  res.status(200).json({products})
+}
+exports.getWoman = async(_, res) =>{
+  const cosa = "Mujer"
+  const products = await Product.find({category:cosa})
+  console.log(products)
+  res.status(200).json({products})
+}
 exports.productDetail = async (req, res) => {
   const { productId } = req.body
-  console.log(req.body, "esto es el req body")
-  console.log(productId, "existes?")
+  
   const product = await Product.findById(productId)
-  console.log(product)
   res.status(200).json({ product })
 }
 

@@ -15,6 +15,7 @@ class MyProvider extends Component {
       password: "",
       email: ""
     },
+    loading: false,
     newCartProduct: {
       quantity: 0,
       size: ""
@@ -50,7 +51,10 @@ class MyProvider extends Component {
     carousel: 0,
     wishListProds: [],
     totalValueCart: 0,
-    quantity: 0
+    quantity: 0,
+    manProducts: [],
+    womanProducts: [],
+    prodId: ""
   }
 
   componentDidMount() {
@@ -68,6 +72,7 @@ class MyProvider extends Component {
         .catch(err => console.log(err))
     }
   }
+  
   // componentDidUpdate(prevState, prevProps) {
   //   if (prevState.Cart.length != this.state.Cart.length){
 
@@ -108,8 +113,6 @@ class MyProvider extends Component {
     await this.setState({
       newCartProduct: { ...this.state.newCartProduct, size: e.target.value }
     })
-    console.log(this.state.newCartProduct.size)
-    console.log(this.state.newCartProduct)
   }
 
   handleSignup = async e => {
@@ -235,7 +238,6 @@ class MyProvider extends Component {
 
   // side menu
   toggleMenu = e => {
-    const menuname = e.target.name
     if (this.state.open) {
       this.setState({ open: false })
     } else {
@@ -259,22 +261,36 @@ class MyProvider extends Component {
     this.setState({ wishListProds: newlist.usr.wishList })
   }
   getProducts = async () => {
+    this.setState({ loading: true })
     const { data } = await MY_SERVICE.getProducts()
     this.setState({ productFeed: data.products })
+    this.setState({ loading: false })
+  }
+  getManProducts = async () => {
+    this.setState({ loading: true })
+    const { data } = await MY_SERVICE.getManProducts()
+    console.log(data)
+    this.setState({ manProducts: data.products })
+  }
+  getWomanProducts = async () => {
+    this.setState({ loading: true })
+    const { data } = await MY_SERVICE.getWomanProducts()
+    console.log(data)
+    this.setState({ womanProducts: data.products })
   }
   getProductDetail = async (e, cb) => {
     // LA CARD DEL PRODUCTO TIENE QUE TENER EL ONCLICK CON ESTA FUNCIÓN Y TIENE QUE TENER EL ID CON EL ID DEL PRODUCTO EN CUESTIÓN
     const { data } = await MY_SERVICE.productDetail(e)
     console.log(data.product)
+    this.setState({prodId:data.product._id})
     await this.setState({ productDetail: data.product })
     console.log(this.state.productDetail)
     cb()
   }
   // ESTA BELLEZZA VA EN EL SUBMIT BUTTON DE ADD TO CART, EN LOS INPUTS DE LOS PRODUCTOS TIENE QUE IR EL HANDLEINPUT RECIBIENDO COMO SEGUNDO PARAMETRO "newCartProduct" PARA QUE LO AÑADA A ESE FORM
   addProductToCart = async () => {
-    const productId = "5df017ed70fca855aae1cded"
     const cart = this.state.Cart
-    const { data } = await MY_SERVICE.productDetail(productId)
+    const { data } = await MY_SERVICE.productDetail(this.state.prodId)
     data.product.quantity = this.state.newCartProduct.quantity
     data.product.size = this.state.newCartProduct.size
     cart.push(data.product)
@@ -287,8 +303,12 @@ class MyProvider extends Component {
       .map(e => e.quantity * e.price)
       .reduce(reducer)
     this.setState({ totalValueCart: totalValue })
+    // this.nextStep()
   }
   // CONFIRMACIÓN DE LA ORDEN
+  // nextStep = () =>{
+  //   setTimeOut(this.toggleMenu(), 3000)
+  // }
   submitOrder = async () => {
     // const reducer = (accumulator, currentValue) => accumulator + currentValue
     // const productsArray = this.state.Cart.map(e => ({
@@ -327,7 +347,6 @@ class MyProvider extends Component {
   }
 
   render() {
-    console.log(this.state.newProduct)
     return (
       <MyContext.Provider
         value={{
@@ -369,7 +388,12 @@ class MyProvider extends Component {
           handleFile: this.handleFile,
           handleUpload: this.handleUpload,
           handleProductQtyOrder: this.handleProductQtyOrder,
-          quantity: this.state.quantity
+          quantity: this.state.quantity,
+          loading: this.state.loading,
+          manProducts: this.state.manProducts,
+          womanProducts: this.state.womanProducts,
+          getManProducts: this.getManProducts,
+          getWomanProducts: this.getWomanProducts
           // user: this.state.user,
         }}
       >

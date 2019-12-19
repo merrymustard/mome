@@ -7,7 +7,7 @@ export const FeedWrapper = styled.div`
 `
 
 export const FitlerCard = styled.div`
-  width: 230px;
+  width: 260px;
   height: 100%;
   display: flex;
   padding: 10px;
@@ -41,6 +41,7 @@ export const CardProdWrap = styled.div`
   padding: 0;
   margin: 0 18px;
   box-sizing: border-box;
+  margin-bottom: 40px;
 
   small {
     margin: 20px 0;

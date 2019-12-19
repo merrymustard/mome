@@ -67,9 +67,9 @@ function IndividualProduct(props) {
               </p>
               <p>Selecciona una talla</p>
               <form
-                onSubmit={e => {
-                  e.preventDefault()
-                  context.addProductToCart()
+                onSubmit={ e => {
+                  e.preventDefault();
+                  context.addProductToCart();
                 }}
               >
                 <SizeContainer>

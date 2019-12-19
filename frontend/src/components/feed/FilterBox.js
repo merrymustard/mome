@@ -5,7 +5,7 @@ import {
   FilterSectionsVertical
 } from "../../styledComponents/StyledComps"
 import { FitlerCard } from "./StylesFeed"
-import Checkbox from "./Checkbox"
+// import Checkbox from "./Checkbox"
 import { MyContext } from "../../context"
 
 export default class FilterBox extends Component {

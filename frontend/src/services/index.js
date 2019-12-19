@@ -1,11 +1,8 @@
 import axios from "axios"
-let baseURL
 
-process.env.NODE_ENV === "production"
-  ? (baseURL = "here should be your production endpoint")
-  : (baseURL = "https://guarded-plateau-32903.herokuapp.com")
+//const baseURL = "https://guarded-plateau-32903.herokuapp.com"
 
-// : (baseURL = "http://localhost:3000")
+const baseURL = "http://localhost:3000"
 
 const service = axios.create({ withCredentials: true, baseURL })
 
@@ -48,6 +45,12 @@ const MY_SERVICE = {
   },
   upload: async image => {
     return await service.post("/upload", image)
+  },
+  getWomanProducts: async() => {
+    return await service.get("/woman")
+  },
+  getManProducts: async() => {
+    return await service.get("/man")
   }
 }
 
