@@ -4,10 +4,12 @@ import { colors } from "../../styledComponents/StyledComps"
 export const FeedWrapper = styled.div`
   width: 100%;
   display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
 `
 
 export const FitlerCard = styled.div`
-  width: 260px;
+  width: 20%;
   height: 100%;
   display: flex;
   padding: 10px;
@@ -18,8 +20,9 @@ export const FitlerCard = styled.div`
   margin-right: 30px;
   color: white;
   text-align: left;
-  @media (max-width: 768px) {
+  @media (max-width: 760px) {
     margin-right: 0;
+    visibility: hidden;
   }
 `
 
@@ -29,6 +32,7 @@ export const FeedContainer = styled.div`
   flex-direction: flex-start;
   flex-wrap: wrap;
   text-align: left;
+  width: 70%;
 `
 
 ///////// thumbnails products
@@ -68,5 +72,53 @@ export const Prodimg = styled.div`
     width: 100%;
     position: relative;
     border-radius: 4px;
+  }
+`
+
+export const FilterSections = styled.div`
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  label {
+    width: 50%;
+  }
+  input {
+    color: white;
+  }
+  .red-circle {
+    background-color: #aa1e31;
+  }
+  .blu-circle {
+    background-color: #18a8f0;
+  }
+  .yellow-circle {
+    background-color: #f7ba08;
+  }
+  .green-circle {
+    background-color: #4dbb16;
+  }
+  .white-circle {
+    background-color: #fff;
+  }
+  .purple-circle {
+    background-color: purple;
+  }
+  div {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+`
+
+export const FilterSectionsVertical = styled.div`
+  display: flex;
+  flex-direction: column;
+  label {
+    padding: 0;
+    margin: 0;
+  }
+  input {
+    color: white;
   }
 `

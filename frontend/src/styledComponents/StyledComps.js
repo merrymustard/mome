@@ -5,16 +5,16 @@ export const colors = {
   primary: " #0f0d35",
   secondary: "#404267",
   secondaryLight: "#e4e4ef",
-  accent: "#f07b7b",
+  accent: "#DB312E",
   darkBlack: "#131415",
   midGray: "#888888",
   midGray2: "#3A3B40",
   lighGray: "#F5F5F5",
   green01: "#B6B550",
   orange01: "#FF7F3B",
-  mint01: "#50B3A8",
-  purple01: "#ABA7FF",
-  pink01: "#FBB8B6",
+  mint01: "#4DC6CC",
+  purple01: "#D9D2BC",
+  pink01: "#E569A0",
   gold01: "#C99958"
 }
 
@@ -150,6 +150,16 @@ export const MainBtn = styled.button`
 export const BtnTransparent = styled.button`
   background-color: transparent;
   border: none;
+  .fa-user,
+  .fa-shopping-bag,
+  .fa-heart {
+    color: white;
+    transition: all .2s ease-in-out;
+  }
+  i:hover {
+		color: ${colors.mint01}
+		transform: scale(1.3);   }
+
 `
 
 export const TemplateBtn = styled.button`
@@ -168,7 +178,7 @@ export const TemplateBtn = styled.button`
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.5);
 	transition: all .2s ease-in-out;
 	&:hover {
-    background-color: ${colors.green01};
+    background-color: ${colors.mint01};
 		color: ${colors.darkBlack}
 		transform: scale(1.05);   }
 `
@@ -187,47 +197,11 @@ export const TemplateBtnWhite = styled.button`
   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.25);
   transition: all 0.1s ease-in-out;
   &:hover {
-    background-color: ${colors.mint01};
+    background-color: ${colors.purple01};
     color: ${colors.darkBlack};
     width: 40%;
   }
 `
-
-// export const AddSubstractBtn = styled.button`
-//   height: 40px;
-//   width: 50px;
-//   padding: 0 14px;
-//   border: none;
-//   font-size: 1rem;
-//   font-weight: 600;
-//   background-color: ${colors.purple01};
-//   color: black;
-//   border-radius: 2px;
-//   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-//   &:hover {
-//     background-color: ${colors.purple01};
-//     opacity: 70%;
-//     color: ${colors.darkBlack};
-//   }
-// `
-
-// export const QtytyBtns = styled.div`
-//   width: 0%;
-//   display: flex;
-//   justify-content: space-between;
-//   height: 40px;
-//   border: none;
-//   margin: 20px 0;
-
-//   .quantity {
-//     font-size: 1.6rem;
-//     padding-left: 16px;
-//     width: 60px;
-//     align-text: right;
-//     border: none;
-//     box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.3);
-//   }
-// `
 
 ///////////Radiobuttons
 export const RowContainerRadio = styled.div`
@@ -356,8 +330,6 @@ export const RowContainer = styled.div`
   }
 `
 
-//////////
-
 export const ProfileTag = styled.form`
   background-image: url("/images/oval-bg.png");
   background-repeat: no-repeat;
@@ -450,172 +422,24 @@ export const NavMain = styled.nav`
 	}
 `
 
-// export const CatButton = styled.button`
-//   color: white;
-//   background-color: transparent;
-//   border: none;
-//   font-size: 1em;
-//   padding: 0 10px;
-// `
-
 ////////// SideNave
-
 export const NavSide = styled.div`
   width: 300px;
   height: 100vh;
   background-color: white;
 `
 
-//////////// Products
-
 export const MainWrapp = styled.div`
-  margin: 40px 10%;
-`
-
-// export const BtnCarousel = styled.div`
-//   width: 140%;
-//   height: 8%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   &:hover {
-//     background-color: ${colors.lighGray};
-//   }
-//   @media (max-width: 1200px) {
-//     width: 200%;
-//     height: 140%;
-//     margin-top: 5%;
-//     transform: rotate(-90deg);
-//     align-items: stretch;
-//   }
-//   @media (max-width: 768px) {
-//     width: 100%;
-//     height: 40%;
-//     margin-top: 5%;
-//   }
-// `
-
-// export const CarouselHorizontal = styled.div`
-//   box-sizing: border-box;
-//   width: 10%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   @media (max-width: 1200px) {
-//     width: 100%;
-//     flex-direction: row;
-//     align-items: stretch;
-//   }
-// `
-
-// export const ProducInfo = styled.div`
-//   width: 44%;
-//   text-align: left;
-//   padding: 4%;
-//   display: flex;
-//   flex-direction: column;
-// 	.button-container{
-// 		display-flex;
-// 		justify: space-between;
-// 	}
-//   .price-num {
-//     font-size: 1.4em;
-//     font-weight: 600;
-//     color: ${colors.darkBlack};
-//   }
-//   @media (max-width: 768px) {
-//     width: 100%;
-//   }
-// `
-
-// export const FeedWrapper = styled.div`
-//   width: 100%;
-//   display: flex;
-// `
-
-// export const FitlerCard = styled.div`
-//   width: 30%;
-//   height: 100%;
-//   display: flex;
-//   padding: 20px;
-//   box-sizing: border-box;
-//   flex-direction: column;
-//   background-color: ${colors.midGray2};
-//   border-radius: 4px;
-//   margin-right: 30px;
-//   color: white;
-//   text-align: left;
-//   @media (max-width: 768px) {
-//     margin-right: 0;
-//   }
-// `
-
-// ////////// IMAGE CONTAINER WITH HEART
-// export const Prodimg = styled.div`
-//   box-sizing: border-box;
-//   box-shadow: 0px 10px 34px 0px rgba(0, 0, 0, 0.2);
-//   margin-bottom: 20px;
-//   z-index: -10;
-//   img {
-//     width: 100%;
-//     position: relative;
-//   }
-//   .Heart:hover {
-//     color: pink;
-//     position: relative;
-//   }
-// `
-
-// ////////// filter
-// export const FeedContainer = styled.div`
-//   display: flex;
-//   flex-direction: flex-start;
-//   flex-wrap: wrap;
-//   text-align: left;
-//   position: relative;
-// `
-
-// export const SizeContainer = styled.div`
-//   display: flex;
-//   flex-direction: start;
-//   button {
-//     border: solid 1px ${colors.midGray};
-//     color: ${colors.midGray};
-//     background-color: transparent;
-//     padding: 8px 16px;
-//     font-size: 1.2rem;
-//     border-radius: 4px;
-//     margin-right: 10px;
-//     &:hover
-//       background-color: ${colors.gold01};
-//     }
-//     &:selected {
-//       background-color: ${colors.darkBlack};
-//     }
-//   }
-// `
-
-export const FilterSections = styled.div`
-  display: flex;
-  flex-direction: flex-start;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  label {
-    width: 50%;
-  }
-  input {
-    color: white;
+  margin: 40px 6%;
+  @media (max-width: 768px) {
+    margin: 0 3%;
+    padding-top: 0;
   }
 `
 
-export const FilterSectionsVertical = styled.div`
-  display: flex;
-  flex-direction: column;
-  label {
-    padding: 0;
-    margin: 0;
-  }
-  input {
-    color: white;
-  }
+
+
+export const SliderFullWidth = styled.div`
+  width: 100vw;
+  height: 100vh;
 `

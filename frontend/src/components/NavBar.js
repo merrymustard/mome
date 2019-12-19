@@ -2,19 +2,39 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import Collapsible from "../components/collapsibles/Collapsible"
 import { MyContext } from "../context"
-import { NavMain, BtnTransparent } from "../styledComponents/StyledComps"
-import { CatButton } from "../components/categories/StylesCategories"
+import {
+  NavMain,
+  BtnTransparent,
+  colors
+} from "../styledComponents/StyledComps"
 import * as Icon from "react-feather"
 import styled from "styled-components"
 
+const CatButton = styled.button`
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  padding: 10px 10px;
+  transition: all .2s ease-in-out;
+  &:hover {
+		color: ${colors.purple01}
+		transform: scale(1.3);   
+    }
+`
+
 const StyleLink = styled(Link)`
-  .redUnder {
-    text-decoration: underline red;
-  }
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  h1 {
+    transition: all 0.2s ease-in-out;
+  }
+  h1:hover {
+    color: #f07b7b;
+    transform: scale(1.2);
+  }
 `
 
 class NavBar extends Component {
@@ -69,9 +89,9 @@ class NavBar extends Component {
               <StyleLink to="/woman">
                 <CatButton>Mujeres</CatButton>
               </StyleLink>
-              <StyleLink to="/feed">
-                <h1 className="logo">feed</h1>
-              </StyleLink>
+              {/* <StyleLink to="/feed">
+                <CatButton>Toda</CatButton>
+              </StyleLink> */}
             </div>
 
             {context.loggedUser ? (
@@ -83,7 +103,7 @@ class NavBar extends Component {
                     context.toggleMenu(e)
                   }}
                 >
-                  <Icon.Heart icon={"heart"} size="24" color="white" />
+                  <i class="fas fa-heart fa-2x"></i>
                 </BtnTransparent>
 
                 <BtnTransparent
@@ -92,7 +112,7 @@ class NavBar extends Component {
                     context.toggleMenu(e)
                   }}
                 >
-                  <Icon.User icon={"user"} size="24" color="white" />
+                  <i class="fas fa-user fa-2x"></i>
                 </BtnTransparent>
 
                 <BtnTransparent
@@ -101,11 +121,7 @@ class NavBar extends Component {
                     context.toggleMenu(e)
                   }}
                 >
-                  <Icon.ShoppingCart
-                    icon={"shoppingcart"}
-                    size="24"
-                    color="white"
-                  />
+                  <i class="fas fa-shopping-bag fa-2x"></i>
                 </BtnTransparent>
               </div>
             ) : (

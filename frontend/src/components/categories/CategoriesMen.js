@@ -1,12 +1,10 @@
 import React, { Component } from "react"
 // import { Link } from "react-router-dom";
-import { MainWrapp, CenterizeMe } from "../../styledComponents/StyledComps"
+import { MainWrapp } from "../../styledComponents/StyledComps"
 import { FeedWrapper, FeedContainer } from "../feed/StylesFeed"
-
 import FilterBox from "../feed/FilterBox"
 import ProductCard from "../feed/ProductCard"
 import { MyContext } from "../../context"
-import { DominoSpinner } from "react-spinners-kit"
 
 export default class CatMen extends Component {
   componentDidMount() {

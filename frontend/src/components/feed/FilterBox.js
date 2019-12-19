@@ -1,10 +1,10 @@
 import React, { Component } from "react"
+import { SubHeaderHighC } from "../../styledComponents/StyledComps"
 import {
-  SubHeaderHighC,
+  FitlerCard,
   FilterSections,
   FilterSectionsVertical
-} from "../../styledComponents/StyledComps"
-import { FitlerCard } from "./StylesFeed"
+} from "./StylesFeed"
 // import Checkbox from "./Checkbox"
 import { MyContext } from "../../context"
 
@@ -17,57 +17,42 @@ export default class FilterBox extends Component {
       <MyContext.Consumer>
         {context => (
           <FitlerCard>
-            <SubHeaderHighC>Category</SubHeaderHighC>
-            <FilterSections>
-              <label>
-                <input type="checkbox" name="men" value="Hombre" />
-                <span style={{ marginLeft: 8 }}>Hombre</span>
-              </label>
-              <br />
-              <label>
-                <input type="checkbox" name="women" value="Mujer" />
-                <span style={{ marginLeft: 8 }}>Mujer</span>
-              </label>
-            </FilterSections>
-            <SubHeaderHighC>Brand</SubHeaderHighC>
-
+            <SubHeaderHighC>Categorias</SubHeaderHighC>
             <FilterSectionsVertical>
               <div>
                 <input type="checkbox" name="men" value="Hombre" />
-                <label>Brand</label>
+                <label>Hombre</label>
               </div>
               <div>
                 <input type="checkbox" name="men" value="Hombre" />
-                <label>Brand</label>
+                <label>Mujer</label>
               </div>
             </FilterSectionsVertical>
+            <br />
+            <SubHeaderHighC>Marca</SubHeaderHighC>
+            <FilterSectionsVertical>
+              <div>
+                <input type="checkbox" name="men" value="Hombre" />
+                <label>LoL</label>
+              </div>
+              <div>
+                <input type="checkbox" name="men" value="Hombre" />
+                <label>MexMar</label>
+              </div>
+            </FilterSectionsVertical>
+            <br />
             <SubHeaderHighC>Color</SubHeaderHighC>
             <FilterSections>
-              <input type="checkbox" name="red" value="red" />
+              <div className="blu-circle"></div>
+              <div className="red-circle"></div>
+              <div className="yellow-circle"></div>
+              <div className="green-circle"></div>
+              <div className="white-circle"></div>
+              <div className="purple-circle"></div>
             </FilterSections>
-            {/* <div className="checkboxwrapper">
-              <label>
-                <Checkbox
-                  name="small"
-                  value="s"
-                  checked={context.checked}
-                  onChange={context.handleCheckboxChange}
-                />
-                <span style={{ marginLeft: 8 }}>Label Text</span>
-              </label>
-              <label>
-                <Checkbox
-                  name="m"
-                  value="m"
-                  checked={context.checked}
-                  onChange={context.handleCheckboxChange}
-                />
-                <span style={{ marginLeft: 8 }}>Label Text</span>
-              </label>
-            </div> */}
-            <div>
+            {/* <div>
               <SubHeaderHighC>Price</SubHeaderHighC>
-            </div>
+            </div> */}
           </FitlerCard>
         )}
       </MyContext.Consumer>
