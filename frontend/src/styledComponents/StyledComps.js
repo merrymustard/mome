@@ -199,7 +199,8 @@ export const TemplateBtnWhite = styled.button`
   &:hover {
     background-color: ${colors.purple01};
     color: ${colors.darkBlack};
-    width: 40%;
+    transform: scale(1.05);
+    margin-left: 6px;
   }
 `
 
@@ -436,8 +437,6 @@ export const MainWrapp = styled.div`
     padding-top: 0;
   }
 `
-
-
 
 export const SliderFullWidth = styled.div`
   width: 100vw;

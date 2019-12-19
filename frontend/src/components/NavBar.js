@@ -32,7 +32,7 @@ const StyleLink = styled(Link)`
     transition: all 0.2s ease-in-out;
   }
   h1:hover {
-    color: #f07b7b;
+    color: #db312e;
     transform: scale(1.2);
   }
 `

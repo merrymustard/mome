@@ -1,6 +1,5 @@
 import React from "react"
 import { MyContext } from "../../context"
-import Carousel from "./Carousel"
 import * as Icon from "react-feather"
 import {
   MainWrapp,
@@ -61,15 +60,15 @@ function IndividualProduct(props) {
             <ProducInfo>
               <SubHeaderHighC>{context.productDetail.brand}</SubHeaderHighC>
               <H1a>{context.productDetail.name}</H1a>
-              <p>{context.productDetail.caption}</p>
+              <h6>{context.productDetail.caption}</h6>
               <p className="price-num">
                 $ {String(context.productDetail.price)}
               </p>
-              <p>Selecciona una talla</p>
+              <h6>Selecciona una talla</h6>
               <form
-                onSubmit={ e => {
-                  e.preventDefault();
-                  context.addProductToCart();
+                onSubmit={e => {
+                  e.preventDefault()
+                  context.addProductToCart()
                 }}
               >
                 <SizeContainer>
@@ -148,23 +147,20 @@ function IndividualProduct(props) {
                 </QtytyBtns>
                 <br />
                 <div className="button-container">
-                  <TemplateBtn type="submit">Add to cart</TemplateBtn>
-                  <TemplateBtnWhite>Add to wish list</TemplateBtnWhite>
+                  <TemplateBtn type="submit">Añade al carrito</TemplateBtn>
+                  <TemplateBtnWhite>Añade a favoritos</TemplateBtnWhite>
                 </div>
               </form>
-
-              <p>share son social media?</p>
+              <br />
+              <br />
+              <RowContainer>
+                <SubHeaderHighC>Descripcion</SubHeaderHighC>
+                {/* <SubHeaderHighC>Garantia</SubHeaderHighC>
+            <SubHeaderHighC>Reviews</SubHeaderHighC> */}
+              </RowContainer>
+              <Pleft>{context.productDetail.details}</Pleft>
             </ProducInfo>
           </RowContainer>
-          <br />
-          <br />
-          <br />
-          <RowContainer>
-            <SubHeaderHighC>Descripcion</SubHeaderHighC>
-            {/* <SubHeaderHighC>Garantia</SubHeaderHighC>
-            <SubHeaderHighC>Reviews</SubHeaderHighC> */}
-          </RowContainer>
-          <Pleft>{context.productDetail.details}</Pleft>
         </MainWrapp>
       )}
     </MyContext.Consumer>

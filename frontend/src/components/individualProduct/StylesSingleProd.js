@@ -39,12 +39,12 @@ export const ProducInfo = styled.div`
   padding: 4%;
   display: flex;
   flex-direction: column;
-  p{
+  h6{
     color: ${colors.midGray2};
     opacity: 70%;
     padding: 0px;
     margin: 10px 0;
-    text-align: left!important;
+    text-align: left;
   }
   h4{
     margin: 0;

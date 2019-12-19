@@ -11,7 +11,12 @@ import {
   ProductCart,
   ProdInfoSideCart
 } from "./StylesCollapsable"
-import { colors, TemplateBtn } from "../../styledComponents/StyledComps"
+import {
+  colors,
+  TemplateBtn,
+  H1a,
+  SubHeaderHighC
+} from "../../styledComponents/StyledComps"
 
 const StyleLink = styled(Link)`
   color: ${colors.darkBlack};
@@ -30,9 +35,18 @@ function Collapsible(props) {
           </CloseBtn>
           {props.navbar.user ? (
             <SlideMenuProf>
-              <StyleLink to="/profile">Información Personal</StyleLink>
-              <StyleLink to="/orders">Mis Ordenes</StyleLink>
-              <StyleLink to="/profile-address">Direcciones</StyleLink>
+              <StyleLink to="/profile">
+                <SubHeaderHighC>Información Personal</SubHeaderHighC>
+              </StyleLink>
+              <StyleLink to="/orders">
+                <SubHeaderHighC>Mis Ordenes</SubHeaderHighC>
+              </StyleLink>
+              <StyleLink to="/profile-address">
+                <SubHeaderHighC>Direcciones</SubHeaderHighC>
+              </StyleLink>
+              <br />
+              <br />
+              <br />
               <TemplateBtn onClick={context.handleLogout}>
                 Cerrar Sesión
               </TemplateBtn>
@@ -53,20 +67,28 @@ function Collapsible(props) {
                 <SlideCart>
                   {context.Cart.map(e => (
                     <ProdInfoSideCart>
-                      <img src ={e.images[1]} alt="patatas"/>
+                      <img src={e.images[1]} alt="patatas" />
                       <div>
-                        <p>{e.name}</p>
-                        <p>
-                          {e.size} : {e.quantity}
-                        </p>
+                        <hr />
+                        <span>
+                          <h5>{e.name}</h5>
+                          <h4>
+                            {e.size} : {e.quantity}
+                          </h4>
+                        </span>
                       </div>
-                      <small>price: {e.price}</small>
+                      <div>
+                        <hr />
+                        <span>
+                          <h4>$ {e.price}</h4>
+                        </span>
+                      </div>
                     </ProdInfoSideCart>
                   ))}
                 </SlideCart>
-                <button onClick={() => props.history.push("/order")}>
-                  Submit Order
-                </button>
+                <TemplateBtn onClick={() => props.history.push("/order")}>
+                  Hacer pedido
+                </TemplateBtn>
                 <p>Total: {context.totalValueCart}</p>
               </ProductCart>
               >
@@ -78,71 +100,3 @@ function Collapsible(props) {
   )
 }
 export default withRouter(Collapsible)
-{
-  /* {if {}}
-          {items.map((item, idx) => (
-            <Item key={idx} {...item} />
-          ))} */
-}
-{
-  /* {
-            (navbar.user) 
-            ? (<Link to="/profile"></Link>) 
-            : (navbar.heart) 
-            ? (
-              <>
-              <h2>WishList</h2>
-              <div className = "wishlist-elements-container">
-              {context.wishListProds.map(e=>(
-
-                <h2>{e.name}</h2>
-
-              ))}
-              </div> 
-              </>
-              ) 
-            : (navbar.shoppingcart)
-            ? (
-                <>
-                <h2>Your Cart</h2>
-              <div className = "cart-products">
-                {context.Cart.map(e=>(
-                  <p>{e.name} : {e.price}</p>
-                ))}
-                <p>Total: {state.Cart.map(e => ({}))} </p>
-                </div>
-                </>
-              )
-            : null
-          } */
-}
-// export default Collapsible;
-
-// export default function NavBar() {
-//   return (
-//     <MyContext.Consumer>
-//       {context => (
-//         <NavMain>
-//           <Collapsible
-//             items={[
-//               {
-//                 title: "a",
-//                 body: "asdf"
-//               }
-//             ]}
-//             open={context.open}
-//           />
-//           <h1 className="logo">MoMe</h1>
-//           <div className="main-nav-icons">
-//             <Icon.Heart size="24" color="white" />
-//             <BtnTransparent onClick={context.switchOpen}>
-//               <Icon.User size="24" color="white" />
-//             </BtnTransparent>
-
-//             <Icon.ShoppingCart size="24" color="white" />
-//           </div>
-//         </NavMain>
-//       )}
-//     </MyContext.Consumer>
-//   );
-// }

@@ -60,25 +60,41 @@ export const SlideCart = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0 auto;
   height: 80vh;
   width: 80%;
   align-content: center;
-  .photodummy {
-    width: 70px;
-    height: 70px;
-    background-color: gray;
-  }
 `
 export const ProdInfoSideCart = styled.div`
   width: 100%;
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
-  justify-content: space-between;
-  p {
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    width: 200px;
+    hr {
+      height: 80px;
+      margin: 10px;
+      opacity: 60%;
+    }
+  }
+  h4,
+  h5 {
     margin: 4px;
+    text-align: left;
+  }
+  img {
+    width: 60px;
+  }
+  span {
+    display: flex;
+    flex-direction: column;
   }
 `
 
@@ -86,4 +102,7 @@ export const ProductCart = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  button {
+    width: 100%;
+  }
 `
