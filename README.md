@@ -13,5 +13,5 @@ Al mismo tiempo es una plataforma para que el mundo conozca a estos grandes dise
 
 ## Prueba MoMe
 Si no quieres crear una cuenta puedes entrar con las siguientes credenciales
-ana@email.com
-123
+- usuario: ana@email.com
+- password: 123
