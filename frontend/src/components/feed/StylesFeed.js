@@ -17,7 +17,6 @@ export const FitlerCard = styled.div`
   flex-direction: column;
   background-color: ${colors.midGray2};
   border-radius: 4px;
-  margin-right: 30px;
   color: white;
   text-align: left;
   @media (max-width: 760px) {

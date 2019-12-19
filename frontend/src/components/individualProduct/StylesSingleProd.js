@@ -77,19 +77,6 @@ export const SizeContainer = styled.div`
     font-size: 1.2rem;
     border-radius: 4px;
     margin-right: 10px;
-    :hover {
-      background-color: ${colors.purple01};
-      color: white;
-      border: solid 1px ${colors.purple01};
-    }
-    :activated {
-      background-color: ${colors.purple01};
-      color: white;
-      border: solid 1px ${colors.purple01};
-    }
-    :selected {
-      background-color: ${colors.darkBlack};
-    }
   }
 `
 
