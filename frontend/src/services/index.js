@@ -1,8 +1,8 @@
 import axios from "axios"
 
-//const baseURL = "https://guarded-plateau-32903.herokuapp.com"
+const baseURL = "https://guarded-plateau-32903.herokuapp.com"
 
-const baseURL = "http://localhost:3000"
+// const baseURL = "http://localhost:3000"
 
 const service = axios.create({ withCredentials: true, baseURL })
 

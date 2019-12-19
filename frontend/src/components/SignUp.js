@@ -1,5 +1,5 @@
-import React from "react";
-import { MyContext } from "../context";
+import React from "react"
+import { MyContext } from "../context"
 import {
   SignUpTag,
   MainWrapperield,
@@ -9,7 +9,7 @@ import {
   RowContainer,
   SubHeaderHighC,
   H1a
-} from "../styledComponents/StyledComps";
+} from "../styledComponents/StyledComps"
 
 export default function SignupContainer(props) {
   return (
@@ -17,17 +17,17 @@ export default function SignupContainer(props) {
       {context => (
         <SignUpTag
           onSubmit={e => {
-            e.preventDefault();
-            context.handleSignup(e);
-            props.history.push("/profile");
+            e.preventDefault()
+            context.handleSignup(e)
+            props.history.push("/")
           }}
         >
           <MainWrapperield>
             <H1a className="tenpix">Registro</H1a>
             <SubHeaderHighC className="tenpix">Datos Personales</SubHeaderHighC>
-            <hr/>
+            <hr />
             {/* <small>*Campo obligatorio</small>*/}
-            <br/> 
+            <br />
             {/* row1 */}
             <RowContainer>
               <div className="form-container">
@@ -51,7 +51,6 @@ export default function SignupContainer(props) {
             </RowContainer>
             {/* row2 */}
             <RowContainer>
-
               <div className="form-container">
                 <label for="country">Pais*</label>
                 <input
@@ -77,9 +76,7 @@ export default function SignupContainer(props) {
               <div className="form-container">
                 {/* genero radio */}
                 <label for="category">Selecciona tu genero*</label>
-                <RowContainerRadio
-                  className="row-container-radio"
-                >
+                <RowContainerRadio className="row-container-radio">
                   <p>
                     <input
                       type="radio"
@@ -87,7 +84,14 @@ export default function SignupContainer(props) {
                       name="gender"
                       value="Hombre"
                     />
-                    <label value = "Hombre" onClick={e=> context.handleRadio(e)} name="gender" for="test1">Hombre</label>
+                    <label
+                      value="Hombre"
+                      onClick={e => context.handleRadio(e)}
+                      name="gender"
+                      for="test1"
+                    >
+                      Hombre
+                    </label>
                   </p>
                   <p>
                     <input
@@ -95,9 +99,15 @@ export default function SignupContainer(props) {
                       id="test2"
                       name="gender"
                       value="Mujer"
-                      
                     />
-                    <label for="test2" value = "Mujer"onClick={e=> context.handleRadio(e)} name="gender">Mujer</label>
+                    <label
+                      for="test2"
+                      value="Mujer"
+                      onClick={e => context.handleRadio(e)}
+                      name="gender"
+                    >
+                      Mujer
+                    </label>
                   </p>
                 </RowContainerRadio>
                 {/* genero radio end */}
@@ -116,9 +126,11 @@ export default function SignupContainer(props) {
                 />
               </div>
             </RowContainer>
-            <br/>
+            <br />
             <CenterizeMe>
-              <MainBtn className="accenBtn" type="submit" value="Crear Cuenta">Crear cuenta</MainBtn>
+              <MainBtn className="accenBtn" type="submit" value="Crear Cuenta">
+                Crear cuenta
+              </MainBtn>
             </CenterizeMe>
           </MainWrapperield>
 
@@ -142,5 +154,5 @@ export default function SignupContainer(props) {
         </SignUpTag>
       )}
     </MyContext.Consumer>
-  );
+  )
 }

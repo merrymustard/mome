@@ -72,7 +72,7 @@ class MyProvider extends Component {
         .catch(err => console.log(err))
     }
   }
-  
+
   // componentDidUpdate(prevState, prevProps) {
   //   if (prevState.Cart.length != this.state.Cart.length){
 
@@ -217,7 +217,7 @@ class MyProvider extends Component {
         cb()
       })
       .catch(err => {
-        Swal.fire(`Quien sabe que paso`, "☠️", "error")
+        Swal.fire(`Tu email o contraseña son incorrectos`)
       })
   }
 
@@ -282,7 +282,7 @@ class MyProvider extends Component {
     // LA CARD DEL PRODUCTO TIENE QUE TENER EL ONCLICK CON ESTA FUNCIÓN Y TIENE QUE TENER EL ID CON EL ID DEL PRODUCTO EN CUESTIÓN
     const { data } = await MY_SERVICE.productDetail(e)
     console.log(data.product)
-    this.setState({prodId:data.product._id})
+    this.setState({ prodId: data.product._id })
     await this.setState({ productDetail: data.product })
     console.log(this.state.productDetail)
     cb()
