@@ -6,7 +6,7 @@
     "@mdi/font": "^4.7.95",
     "@mdi/js": "^4.7.95",
     "@mdi/react": "^1.2.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-feather": "^2.0.3",
