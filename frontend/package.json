@@ -12,7 +12,7 @@
     "react-feather": "^2.0.3",
     "react-gesture-gallery": "^1.1.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.2",
+    "react-scripts": "5.0.1",
     "react-spinners-kit": "^1.9.0",
     "styled-components": "^4.4.1",
     "sweetalert2": "^9.4.3"
